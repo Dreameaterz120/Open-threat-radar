@@ -49,27 +49,27 @@ def fetch_threatfox():
         if line.strip() and not line.startswith("#")
     ]
 
-        records = []
+    records = []
 
-        for row in csv.reader(
-            io.StringIO("\n".join(data_lines)),
-            skipinitialspace=True,
-        ):
-            values = [value.strip() for value in row]
-    
-            if len(values) != len(THREATFOX_COLUMNS):
-                continue
-    
-            record = dict(zip(THREATFOX_COLUMNS, values))
-    
-            try:
-                record["confidence"] = int(record["confidence"])
-            except ValueError:
-                record["confidence"] = 0
-    
-            records.append(record)
-    
-        return records
+    for row in csv.reader(
+        io.StringIO("\n".join(data_lines)),
+        skipinitialspace=True,
+    ):
+        values = [value.strip() for value in row]
+
+        if len(values) != len(THREATFOX_COLUMNS):
+            continue
+
+        record = dict(zip(THREATFOX_COLUMNS, values))
+
+        try:
+            record["confidence"] = int(record["confidence"])
+        except ValueError:
+            record["confidence"] = 0
+
+        records.append(record)
+
+    return records
 
 
 def clean_summary(value):
@@ -98,9 +98,7 @@ def fetch_research_feeds():
         try:
             parsed = feedparser.parse(
                 source["url"],
-                request_headers={
-                    "User-Agent": "OpenThreatRadar/0.2"
-                },
+                request_headers={"User-Agent": "OpenThreatRadar/0.2"},
             )
 
             if not parsed.entries:
@@ -108,7 +106,10 @@ def fetch_research_feeds():
                 continue
 
             for entry in parsed.entries[:10]:
-                title = str(entry.get("title", "Untitled report")).strip()
+                title = str(
+                    entry.get("title", "Untitled report")
+                ).strip()
+
                 link = str(entry.get("link", "")).strip()
                 unique_key = link or f"{source_name}:{title}"
 
@@ -185,15 +186,21 @@ def create_dashboard(indicators, articles, feed_errors):
     malware_counts = Counter(
         item["malware"]
         for item in indicators
-        if item["malware"] not in ("", "None", "Unknown malware")
+        if item["malware"] not in (
+            "",
+            "None",
+            "Unknown malware",
+        )
     )
 
     threat_counts = Counter(
-        item["threat_type"] for item in indicators
+        item["threat_type"]
+        for item in indicators
     )
 
     high_confidence = sum(
-        item["confidence"] >= 75 for item in indicators
+        item["confidence"] >= 75
+        for item in indicators
     )
 
     active_sources = len(
@@ -222,8 +229,12 @@ def create_dashboard(indicators, articles, feed_errors):
         article_cards += f"""
         <article class="report">
             <div class="report-meta">
-                <span class="source">{safe(article["source"])}</span>
-                <span>{safe(article["category"])}</span>
+                <span class="source">
+                    {safe(article["source"])}
+                </span>
+                <span>
+                    {safe(article["category"])}
+                </span>
             </div>
 
             <h3>
@@ -235,7 +246,10 @@ def create_dashboard(indicators, articles, feed_errors):
             </h3>
 
             <p>{summary}</p>
-            <div class="published">{safe(article["published"])}</div>
+
+            <div class="published">
+                {safe(article["published"])}
+            </div>
         </article>
         """
 
@@ -252,7 +266,9 @@ def create_dashboard(indicators, articles, feed_errors):
         indicator_rows += f"""
         <tr>
             <td>{safe(item["first_seen"])}</td>
-            <td><code>{safe(item["ioc_value"])}</code></td>
+            <td>
+                <code>{safe(item["ioc_value"])}</code>
+            </td>
             <td>{safe(item["ioc_type"])}</td>
             <td>{safe(item["malware"])}</td>
             <td>{safe(item["threat_type"])}</td>
@@ -268,12 +284,15 @@ def create_dashboard(indicators, articles, feed_errors):
 
     if feed_errors:
         error_items = "".join(
-            f"<li>{safe(error)}</li>" for error in feed_errors
+            f"<li>{safe(error)}</li>"
+            for error in feed_errors
         )
 
         error_panel = f"""
         <details class="panel errors">
-            <summary>Feed warnings ({len(feed_errors)})</summary>
+            <summary>
+                Feed warnings ({len(feed_errors)})
+            </summary>
             <ul>{error_items}</ul>
         </details>
         """
@@ -282,11 +301,16 @@ def create_dashboard(indicators, articles, feed_errors):
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
 
-    <meta name="description"
-          content="An automated overview of public threat intelligence">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="description"
+        content="An automated overview of public threat intelligence"
+    >
 
     <title>Open Threat Radar</title>
 
@@ -310,12 +334,18 @@ def create_dashboard(indicators, articles, feed_errors):
         body {{
             margin: 0;
             background:
-                radial-gradient(circle at top right,
-                    #13233d 0, transparent 32%),
+                radial-gradient(
+                    circle at top right,
+                    #13233d 0,
+                    transparent 32%
+                ),
                 var(--background);
             color: var(--text);
             font-family:
-                Inter, ui-sans-serif, system-ui, sans-serif;
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                sans-serif;
         }}
 
         main {{
@@ -484,58 +514,78 @@ def create_dashboard(indicators, articles, feed_errors):
 <main>
     <header>
         <h1>Open Threat Radar</h1>
-        <div class="muted">Last updated: {generated_at}</div>
+
+        <div class="muted">
+            Last updated: {generated_at}
+        </div>
 
         <p class="intro muted">
-            Automated overview of publicly available threat research,
-            malware activity and technical indicators. External
-            intelligence must be independently validated before use.
+            Automated overview of publicly available threat
+            research, malware activity and technical indicators.
+            External intelligence must be independently validated
+            before use.
         </p>
     </header>
 
     <section class="cards">
         <div class="card">
             Research reports
-            <span class="number">{len(articles)}</span>
+            <span class="number">
+                {len(articles)}
+            </span>
         </div>
 
         <div class="card">
             Active research sources
-            <span class="number">{active_sources}</span>
+            <span class="number">
+                {active_sources}
+            </span>
         </div>
 
         <div class="card">
             Recent indicators
-            <span class="number">{len(indicators)}</span>
+            <span class="number">
+                {len(indicators)}
+            </span>
         </div>
 
         <div class="card">
             High-confidence IOCs
-            <span class="number">{high_confidence}</span>
+            <span class="number">
+                {high_confidence}
+            </span>
         </div>
     </section>
 
     {error_panel}
 
-    <h2 class="section-heading">Threat-research radar</h2>
+    <h2 class="section-heading">
+        Threat-research radar
+    </h2>
 
     <section class="reports">
         {article_cards}
     </section>
 
-    <h2 class="section-heading">Malware pulse</h2>
+    <h2 class="section-heading">
+        Malware pulse
+    </h2>
 
     <section class="panel">
         {malware_tags}
     </section>
 
-    <h2 class="section-heading">Technical activity</h2>
+    <h2 class="section-heading">
+        Technical activity
+    </h2>
 
     <section class="panel">
         {threat_tags}
     </section>
 
-    <h2 class="section-heading">Recent indicators</h2>
+    <h2 class="section-heading">
+        Recent indicators
+    </h2>
 
     <section class="panel">
         <p class="muted">
@@ -615,6 +665,7 @@ def main():
 
     if feed_errors:
         print("Feed warnings:")
+
         for error in feed_errors:
             print(f"- {error}")
 
