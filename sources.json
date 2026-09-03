@@ -1,0 +1,34 @@
+{
+  "research_feeds": [
+    {
+      "name": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "category": "Threat research"
+    },
+    {
+      "name": "Cisco Talos",
+      "url": "https://blog.talosintelligence.com/rss/",
+      "category": "Threat research"
+    },
+    {
+      "name": "Unit 42",
+      "url": "https://unit42.paloaltonetworks.com/feed/",
+      "category": "Threat research"
+    },
+    {
+      "name": "The DFIR Report",
+      "url": "https://thedfirreport.com/feed/",
+      "category": "Incident analysis"
+    },
+    {
+      "name": "SANS Internet Storm Center",
+      "url": "https://isc.sans.edu/rssfeed.xml",
+      "category": "Threat activity"
+    },
+    {
+      "name": "WeLiveSecurity",
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
+      "category": "Threat research"
+    }
+  ]
+}
