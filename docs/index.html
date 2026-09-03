@@ -1,12 +1,2415 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Open Threat Radar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Threat Radar</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --background: #0b1020;
+            --panel: #121a2e;
+            --border: #263451;
+            --text: #e7edf8;
+            --muted: #93a4bf;
+            --accent: #42d3a4;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        main {
+            width: min(1400px, 94%);
+            margin: 40px auto;
+        }
+
+        h1 { margin-bottom: 4px; }
+        h2 { margin-top: 0; }
+        .muted { color: var(--muted); }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .card, .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .number {
+            display: block;
+            margin-top: 6px;
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .tag {
+            display: inline-block;
+            margin: 4px;
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: #18243d;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        code {
+            color: #ffcc7a;
+            word-break: break-all;
+        }
+
+        .confidence {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a { color: var(--accent); }
+    </style>
 </head>
 <body>
-  <h1>Open Threat Radar</h1>
-  <p>The radar is being initialized.</p>
+<main>
+    <h1>Open Threat Radar</h1>
+    <div class="muted">Last updated: 2026-09-03 10:36 UTC</div>
+
+    <section class="cards">
+        <div class="card">
+            Recent indicators
+            <span class="number">1114</span>
+        </div>
+        <div class="card">
+            High confidence
+            <span class="number">0</span>
+        </div>
+        <div class="card">
+            Malware families
+            <span class="number">40</span>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Malware pulse</h2>
+        <span class='tag'>&quot;Vidar&quot; · 280</span><span class='tag'>&quot;MacSync&quot; · 221</span><span class='tag'>&quot;Unknown malware&quot; · 129</span><span class='tag'>&quot;Sliver&quot; · 95</span><span class='tag'>&quot;AsyncRAT&quot; · 56</span><span class='tag'>&quot;Medusa&quot; · 47</span><span class='tag'>&quot;IClickFix&quot; · 45</span><span class='tag'>&quot;Coinminer&quot; · 30</span>
+    </section>
+
+    <section class="panel" style="margin-top:16px">
+        <h2>Threat activity</h2>
+        <span class='tag'>&quot;botnet_cc&quot; · 680</span><span class='tag'>&quot;payload&quot; · 294</span><span class='tag'>&quot;payload_delivery&quot; · 140</span>
+    </section>
+
+    <section class="panel" style="margin-top:16px">
+        <h2>Recent indicators</h2>
+        <p class="muted">
+            Indicators are unverified external intelligence and should not
+            be treated as automatic blocking recommendations.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>First seen</th>
+                        <th>Indicator</th>
+                        <th>Type</th>
+                        <th>Malware</th>
+                        <th>Activity</th>
+                        <th>Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>2026-09-03 09:30:49</td>
+            <td><code>&quot;https://bariel.id/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:30:49</td>
+            <td><code>&quot;https://mabuyi.co.za/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:30:49</td>
+            <td><code>&quot;https://david.advancecreative.co.uk/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:03:22</td>
+            <td><code>&quot;178.104.22.105:443&quot;</code></td>
+            <td>&quot;ip:port&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:03:22</td>
+            <td><code>&quot;2.29.29.217:443&quot;</code></td>
+            <td>&quot;ip:port&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:03:22</td>
+            <td><code>&quot;2.29.12.45:443&quot;</code></td>
+            <td>&quot;ip:port&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:55</td>
+            <td><code>&quot;hot.sm188dvlv.mom&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:55</td>
+            <td><code>&quot;gen.sm188dvlv.lat&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:55</td>
+            <td><code>&quot;m5p.sm188dvlv.lol&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:38</td>
+            <td><code>&quot;https://178.104.22.105/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:38</td>
+            <td><code>&quot;https://2.29.29.217/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:37</td>
+            <td><code>&quot;https://gen.sm188dvlv.lat/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:37</td>
+            <td><code>&quot;https://for.sm188dvlv.lat/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:37</td>
+            <td><code>&quot;https://cle.sm188dvlv.lol/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:37</td>
+            <td><code>&quot;https://m5p.sm188dvlv.lol/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:36</td>
+            <td><code>&quot;https://hot.sm188dvlv.mom/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 09:02:36</td>
+            <td><code>&quot;https://fpw.sm188dvlv.mom/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 08:30:49</td>
+            <td><code>&quot;https://granoco.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 08:00:50</td>
+            <td><code>&quot;https://portaleducoas.org/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 08:00:49</td>
+            <td><code>&quot;https://bhagwatibiscuits.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 08:00:49</td>
+            <td><code>&quot;https://elkon.gr/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 08:00:49</td>
+            <td><code>&quot;https://atlantasbestconcrete.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://vertixtech.net/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://alholol-almobtakara.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://web-stakecasino.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://amazonia4.org/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://www.ricevimentialkamar.it/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://laptopgo.co.id/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:51</td>
+            <td><code>&quot;https://simospartyprint.co.uk/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://kala-systems.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://staging.elevateconsultinghub.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://mail.sporium.net/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://kacstonerecords.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://www.forlagetkompass.se/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://www.parcelpacky.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:50</td>
+            <td><code>&quot;https://harryfernandezf.forgetfulwizard.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://myvisualstory.de/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://suitsgreen.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://nutricaocomjo.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://www.bookerteeenterprises.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://gabariteiros.com.br/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://factspakistan.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://strandraeuber-ditzum.de/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://rhuyn.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://optimized.net.au/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://agingenieria.com.pe/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:30:49</td>
+            <td><code>&quot;https://hoh-homecare.com/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 07:24:55</td>
+            <td><code>&quot;gold.albaikmenuonline.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;IClickFix&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:52:10</td>
+            <td><code>&quot;linkinmasgocf.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;IClickFix&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:44:12</td>
+            <td><code>&quot;faceit-anti-cheat.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:44:12</td>
+            <td><code>&quot;faceit-cdn.org&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:44:11</td>
+            <td><code>&quot;captcha-web.cc&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Unknown malware&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:49</td>
+            <td><code>&quot;http://vps.atlas101.us.kg&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Mirai&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:44</td>
+            <td><code>&quot;94.154.43.69:7768&quot;</code></td>
+            <td>&quot;ip:port&quot;</td>
+            <td>&quot;Mirai&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:44</td>
+            <td><code>&quot;http://loveher.dpdns.org&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Mirai&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:43</td>
+            <td><code>&quot;http://langec.jewmailer.net:7768&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Mirai&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:41</td>
+            <td><code>&quot;fpw.sm188dvlv.mom&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:40</td>
+            <td><code>&quot;cle.sm188dvlv.lol&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:21</td>
+            <td><code>&quot;cli-desktop.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:21</td>
+            <td><code>&quot;fern-plume.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:20</td>
+            <td><code>&quot;node-slate.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:19</td>
+            <td><code>&quot;jadeleap15.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:18</td>
+            <td><code>&quot;loop-lumen.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:03</td>
+            <td><code>&quot;v-lan.asia&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:02</td>
+            <td><code>&quot;https://v-lan.asia/login&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:39:00</td>
+            <td><code>&quot;registration.v-panel.asia&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 05:38:59</td>
+            <td><code>&quot;https://registration.v-panel.asia/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-03 01:45:27</td>
+            <td><code>&quot;https://46.29.26.47&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 23:37:38</td>
+            <td><code>&quot;https://raw.githubusercontent.com/cowenrty/empathic/refs/heads/main/cornea&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;ClearFake&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 23:15:45</td>
+            <td><code>&quot;hot.13balien.org&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 23:15:45</td>
+            <td><code>&quot;https://hot.13balien.org/&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;Vidar&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 23:13:15</td>
+            <td><code>&quot;https://raw.githubusercontent.com/frantario/cloud/refs/heads/main/situated&quot;</code></td>
+            <td>&quot;url&quot;</td>
+            <td>&quot;ClearFake&quot;</td>
+            <td>&quot;payload_delivery&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:30</td>
+            <td><code>&quot;lasvegasweddingreception.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:30</td>
+            <td><code>&quot;charlottedefenseattorney.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:30</td>
+            <td><code>&quot;trufflecatering.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;denverpediatricchiropractor.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;dramshopliabilityattorney.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;wolfmoving.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;syracusefertilitycenter.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;zanderrealestate.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;hawaiifencecompany.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;atlantaairporttaxiservice.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;jobureau.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;dallasmobileautomechanic.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;mintnt.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;restoremental.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;polyvideos.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;truheating.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;floridavacationvillarental.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;charlottesvilleinteriordesign.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;401trading.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;plasmaticsystems.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;homeinspectionsdelaware.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;darkmauve.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;dixonshvac.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;investigatemiami.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;investigatoraustin.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;fencecompanycharleston.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;paintboothinstalling.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;thevenueapartments.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;headshotdfw.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;homeinspectoralaska.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;languageschoolai.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:29</td>
+            <td><code>&quot;lasvegaslaminateflooring.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;5x5web.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;roteagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;ruenagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;rvieragent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;3plfast.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;alabamarecoverycenter.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;americanskydive.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;arizonahomesellers.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;ashevilleweddingfilms.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;buywx.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;cincycarpetcleaning.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;blackcarserviceslax.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;southtexashvac.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;centralflgaragedoors.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;atlanticwoodworking.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;charlestonlawncompany.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;buynewgymequipment.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;hybridcustomhomes.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;bravoslandscaping.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;cabinrentalsnc.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;californiasmallbusinesslaw.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;dallasirrigationservices.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;coloradoconstructionsupply.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;dfwemergencydentist.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;direito-digital.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:28</td>
+            <td><code>&quot;dogtrainersgeorgia.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;silveradolandscape.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;flip-cart.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;kylesplumbing.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;proxyviper.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;premierrentalpurchase.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;centralfloridapowerwash.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;criminallawyerpr.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;irvineinteriordesigner.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;pricasino.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;sdlasik.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;oregoninteriors.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;spotlessridesdetailing.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;robertjonesrealty.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;touristprogram.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;trailblazehealth.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;sdpsychic.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;sanfranciscoinsulation.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;pruagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;alabamalimoservice.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;scottsdalevending.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;qeuryagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;yoauction.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;qusetagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;flheadshot.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:27</td>
+            <td><code>&quot;raelagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;homeinspectionnaperville.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;bcrealestateagency.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;beachjiujitsu.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;vegasmanageditservices.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;floridakitchencabinet.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;intopython.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;garagedoorskentucky.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;aquaticpoolsandspas.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;genomicsforge.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;lvvacationrentals.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;lifecoachrochester.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;hawaiiwindowtinting.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;fredscarpetcleaning.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;dylantreeservice.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;oepnagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;legacybuilderscolorado.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;moldinspectiondayton.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;atlsaagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;nameisfame.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;floridapsychicmedium.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;pestcontrolamarillo.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;beaocnagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;napavalleymentalhealth.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;newjerseypetsitter.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;itsystemsexpert.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;ohdentalimplants.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:26</td>
+            <td><code>&quot;jerryshvac.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;seattlewrongfuldeathlawyer.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;ricksjunk.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;shareyourprompt.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;detroitconcretecontractor.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;truckrepairlasvegas.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;wolfwraps.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;charlestonwaterheater.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;kidsjumpandplay.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;virginiaoverheaddoor.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;waterdamagerepairflorida.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;aidevmaster.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;alluringsites.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;modernhomeai.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;e-agentics.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;electricdredger.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;e-renewable.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;bestbuydomain.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;garagedoorstexas.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;firealarmflorida.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;denverplumbingandwaterheater.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;utahhardwoodflooring.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;swisshomesforsale.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;elitefenceanddeck.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:25</td>
+            <td><code>&quot;dubaivehiclemart.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;utahplumbingandheating.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;vacationrentalvirginia.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;swiftfixgaragedoors.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;texascommercialpainting.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;kirkcharlie.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;kitchenbathremodels.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;accesscovidtest.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;glimemragent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;accesscovidtests.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;glwoagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;goelagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;grnadagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;atxpressurewashing.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;gylphagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;belldredgingpump.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;realestateagentsd.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;coloradoaffordablelawyer.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;haertagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;hoepagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;briskinternet.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;riversideconcretecontractors.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;ashevilleroofingcontractor.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;louisianaroofrepair.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;luxuryswisshomes.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;majordubai.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;sullyphotos.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:24</td>
+            <td><code>&quot;beachhoteldestin.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;injurylawsocal.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;lalandscapelighting.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;dualverify.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;inqix.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;longbeachmartialarts.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;miamidadenotary.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;robscarpetcleaning.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;livetux.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;loqira.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;miamiresidentialroofing.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;prmieagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;proetctagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;scottsdalemobilewindowtinting.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;massachusettsyoga.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;phoenixvideoagency.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;prptoagent.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-02 16:39:23</td>
+            <td><code>&quot;oklahomawarehousing.com&quot;</code></td>
+            <td>&quot;domain&quot;</td>
+            <td>&quot;MacSync&quot;</td>
+            <td>&quot;botnet_cc&quot;</td>
+            <td><span class="confidence">0%</span></td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <p class="muted">
+        Source:
+        <a href="https://threatfox.abuse.ch/" target="_blank"
+           rel="noopener noreferrer">ThreatFox by abuse.ch</a>
+    </p>
+</main>
 </body>
 </html>
