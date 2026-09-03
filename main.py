@@ -49,26 +49,27 @@ def fetch_threatfox():
         if line.strip() and not line.startswith("#")
     ]
 
-    records = []
+        records = []
 
-       for row in csv.reader(
-        io.StringIO("\n".join(data_lines)),
-        skipinitialspace=True,
-    ):
-
-        if len(values) != len(THREATFOX_COLUMNS):
-            continue
-
-        record = dict(zip(THREATFOX_COLUMNS, values))
-
-        try:
-            record["confidence"] = int(record["confidence"])
-        except ValueError:
-            record["confidence"] = 0
-
-        records.append(record)
-
-    return records
+        for row in csv.reader(
+            io.StringIO("\n".join(data_lines)),
+            skipinitialspace=True,
+        ):
+            values = [value.strip() for value in row]
+    
+            if len(values) != len(THREATFOX_COLUMNS):
+                continue
+    
+            record = dict(zip(THREATFOX_COLUMNS, values))
+    
+            try:
+                record["confidence"] = int(record["confidence"])
+            except ValueError:
+                record["confidence"] = 0
+    
+            records.append(record)
+    
+        return records
 
 
 def clean_summary(value):
