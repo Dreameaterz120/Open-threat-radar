@@ -2,48 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+          content="An automated overview of public threat intelligence">
+
     <title>Open Threat Radar</title>
+
     <style>
         :root {
             color-scheme: dark;
-            --background: #0b1020;
-            --panel: #121a2e;
-            --border: #263451;
-            --text: #e7edf8;
-            --muted: #93a4bf;
-            --accent: #42d3a4;
+            --background: #090e1a;
+            --panel: #111a2d;
+            --panel-light: #16223a;
+            --border: #263754;
+            --text: #e8eef8;
+            --muted: #96a7c1;
+            --accent: #43d6a5;
+            --warning: #f4bd62;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
-            background: var(--background);
+            background:
+                radial-gradient(circle at top right,
+                    #13233d 0, transparent 32%),
+                var(--background);
             color: var(--text);
-            font-family: Inter, system-ui, sans-serif;
+            font-family:
+                Inter, ui-sans-serif, system-ui, sans-serif;
         }
 
         main {
-            width: min(1400px, 94%);
-            margin: 40px auto;
+            width: min(1440px, 94%);
+            margin: 42px auto 70px;
         }
 
-        h1 { margin-bottom: 4px; }
-        h2 { margin-top: 0; }
-        .muted { color: var(--muted); }
+        h1 {
+            margin-bottom: 5px;
+            font-size: clamp(30px, 5vw, 48px);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            line-height: 1.35;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .muted,
+        .published {
+            color: var(--muted);
+        }
+
+        .intro {
+            max-width: 760px;
+            line-height: 1.6;
+        }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(190px, 1fr));
             gap: 16px;
-            margin: 28px 0;
+            margin: 30px 0;
         }
 
-        .card, .panel {
-            background: var(--panel);
+        .card,
+        .panel {
+            background: rgba(17, 26, 45, 0.94);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 20px;
         }
 
@@ -52,16 +97,60 @@
             margin-top: 6px;
             color: var(--accent);
             font-size: 30px;
+            font-weight: 750;
+        }
+
+        .section-heading {
+            margin-top: 42px;
+            margin-bottom: 16px;
+        }
+
+        .reports {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(310px, 1fr));
+            gap: 16px;
+        }
+
+        .report {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 19px;
+        }
+
+        .report p {
+            color: #bec9da;
+            line-height: 1.55;
+        }
+
+        .report-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .source {
+            color: var(--accent);
             font-weight: 700;
+        }
+
+        .published {
+            margin-top: 15px;
+            font-size: 13px;
         }
 
         .tag {
             display: inline-block;
             margin: 4px;
             padding: 7px 10px;
+            background: var(--panel-light);
             border: 1px solid var(--border);
             border-radius: 999px;
-            background: #18243d;
         }
 
         .table-wrapper {
@@ -74,7 +163,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             border-bottom: 1px solid var(--border);
             text-align: left;
@@ -93,47 +183,985 @@
 
         .confidence {
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 650;
         }
 
-        a { color: var(--accent); }
+        .errors {
+            margin-top: 18px;
+            color: var(--warning);
+        }
+
+        footer {
+            margin-top: 30px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
     </style>
 </head>
+
 <body>
 <main>
-    <h1>Open Threat Radar</h1>
-    <div class="muted">Last updated: 2026-09-03 10:36 UTC</div>
+    <header>
+        <h1>Open Threat Radar</h1>
+        <div class="muted">Last updated: 2026-09-03 10:47 UTC</div>
+
+        <p class="intro muted">
+            Automated overview of publicly available threat research,
+            malware activity and technical indicators. External
+            intelligence must be independently validated before use.
+        </p>
+    </header>
 
     <section class="cards">
         <div class="card">
-            Recent indicators
-            <span class="number">1114</span>
+            Research reports
+            <span class="number">60</span>
         </div>
+
         <div class="card">
-            High confidence
+            Active research sources
+            <span class="number">6</span>
+        </div>
+
+        <div class="card">
+            Recent indicators
+            <span class="number">1113</span>
+        </div>
+
+        <div class="card">
+            High-confidence IOCs
             <span class="number">0</span>
         </div>
-        <div class="card">
-            Malware families
-            <span class="number">40</span>
-        </div>
     </section>
+
+    
+
+    <h2 class="section-heading">Threat-research radar</h2>
+
+    <section class="reports">
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America
+                </a>
+            </h3>
+
+            <p>Explore how attackers targeting Latin American entities use AI for data exfiltration and how basic OpSec errors allow defenders to disrupt operations. The post Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America appeared first on Unit 42 .</p>
+            <div class="published">Thu, 03 Sep 2026 10:00:58 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33306"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Honeypot-Omaha and batch.py &amp;#x5b;Guest Diary&amp;#x5d;, (Wed, Sep 2nd)
+                </a>
+            </h3>
+
+            <p>[This is a Guest Diary by Frank Igbokwe, an ISC intern as part of the SANS.edu BACS program]</p>
+            <div class="published">Thu, 03 Sep 2026 02:02:56 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33308"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Thursday, September 3rd, 2026 https://isc.sans.edu/podcastdetail/10080, (Thu, Sep 3rd)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+            <div class="published">Thu, 03 Sep 2026 02:00:03 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/09/02/impersonating-it-support-threat-actors-turn-remote-session-into-enterprise-wide-access/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Impersonating IT support: how threat actors turn a remote session into enterprise-wide access
+                </a>
+            </h3>
+
+            <p>Microsoft Threat Intelligence observed a human-operated intrusion campaign that abuses Microsoft Teams external collaboration to impersonate IT support, gain remote access, and deploy a Node.js-based implant. Learn how attackers move from social engineering to lateral movement using legitimate tools, and how Microsoft Defender helps detect and disrupt the...</p>
+            <div class="published">Wed, 02 Sep 2026 22:51:18 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/how-to/ive-been-deepfaked-what-do/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    I’ve been deepfaked: What do I do?
+                </a>
+            </h3>
+
+            <p>Don’t panic if you spot an illegally created image or video of you online – there are ways to request its removal</p>
+            <div class="published">Wed, 02 Sep 2026 11:48:09 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation
+                </a>
+            </h3>
+
+            <p>Using autonomous AI agents, an attacker breached an enterprise network in a matter of hours. Understand how to address and defend against agentic attacks. The post An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation appeared first on Unit 42 .</p>
+            <div class="published">Wed, 02 Sep 2026 10:00:46 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33304"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Wednesday, September 2nd, 2026 https://isc.sans.edu/podcastdetail/10078, (Wed, Sep 2nd)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+            <div class="published">Wed, 02 Sep 2026 02:00:02 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/09/01/counterfeit-installers-system-compromise-tracking-deceptive-software-download-campaign/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Counterfeit installers to system compromise: Tracking a deceptive software download campaign
+                </a>
+            </h3>
+
+            <p>An active campaign is impersonating legitimate software vendors to deliver malware through look-alike download pages and regenerated installer archives. Microsoft Defender Experts shares observed attack techniques, Defender XDR detections, indicators of compromise, and practical mitigations to help organizations identify, block, and respond to this threat...</p>
+            <div class="published">Tue, 01 Sep 2026 22:48:28 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33300"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Guildma (Astaroth) malware infection from Brazilian Portuguese email, (Tue, Sep 1st)
+                </a>
+            </h3>
+
+            <p>Introduction</p>
+            <div class="published">Tue, 01 Sep 2026 21:30:18 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/09/01/cybersecurity-ir-workshop-you-shouldnt-miss/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Cybersecurity IR Workshop: The workshop you shouldn’t miss
+                </a>
+            </h3>
+
+            <p>Cyber resilience starts before a crisis. Gain practical insights from DART to strengthen readiness and response. The post Cybersecurity IR Workshop: The workshop you shouldn’t miss appeared first on Microsoft Security Blog .</p>
+            <div class="published">Tue, 01 Sep 2026 18:55:35 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33302"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Tuesday, September 1st, 2026 https://isc.sans.edu/podcastdetail/10076, (Tue, Sep 1st)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+            <div class="published">Tue, 01 Sep 2026 02:00:03 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33298"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    The Coding-Agent Trap: When a &quot;Free&quot; LLM Endpoint Is the Adversary, (Mon, Aug 31st)
+                </a>
+            </h3>
+
+            <p>One of my internet-exposed inference honeypots was discovered, relabeled with sought-after model names, and incorporated into infrastructure apparently used to provide &quot;free&quot; LLM backends. It then received a real coding-agent session &amp;#;x26;#;xe2;&amp;#;x26;#;x80;&amp;#;x26;#;x94; history, filesystem output, working paths, and the agent&amp;#;x26;#;39;s local tool ma...</p>
+            <div class="published">Mon, 31 Aug 2026 20:00:34 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/spring-ring-voice-phishing-campaigns/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams
+                </a>
+            </h3>
+
+            <p>Learn how the Spring Ring campaign abuses Microsoft Teams and voice phishing to deploy malware and target enterprise domain controllers. The post Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams appeared first on Unit 42 .</p>
+            <div class="published">Mon, 31 Aug 2026 10:00:36 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/videos/month-security-tony-anscombe-august-2026/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    This month in security with Tony Anscombe – August 2026 edition
+                </a>
+            </h3>
+
+            <p>Details about the Hugging Face hack, critical infrastructure under attack, a spoofed in-flight Wi-Fi network, and more of this month&#x27;s cybersecurity news</p>
+            <div class="published">Mon, 31 Aug 2026 08:55:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33296"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Monday, August 31st, 2026 https://isc.sans.edu/podcastdetail/10074, (Mon, Aug 31st)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+            <div class="published">Mon, 31 Aug 2026 02:00:03 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33288"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    YARA-X 1.20.0 Release, (Sun, Aug 30th)
+                </a>
+            </h3>
+
+            <p>YARA-X&amp;#;x26;#;39;s 1.20.0 release brings 14 improvements and 13 bugfixes.</p>
+            <div class="published">Sun, 30 Aug 2026 07:14:49 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    TerminalFix campaign deploys a reverse tunnel through multistage intrusion
+                </a>
+            </h3>
+
+            <p>Microsoft Threat Intelligence provides analysis of a ClickFix campaign that uses fake CAPTCHA prompts, DLL sideloading, and a reverse tunnel, with detections and hunting guidance. The post TerminalFix campaign deploys a reverse tunnel through multistage intrusion appeared first on Microsoft Security Blog .</p>
+            <div class="published">Sat, 29 Aug 2026 03:43:27 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/perturbation-probing-llm-safety/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Perturbation Probing: A New Diagnostic for the Fragility of LLM Safety
+                </a>
+            </h3>
+
+            <p>New research reveals that AI safety refusal lives in a thin neural layer, highlighting the critical need for external, multi-layered security. The post Perturbation Probing: A New Diagnostic for the Fragility of LLM Safety appeared first on Unit 42 .</p>
+            <div class="published">Fri, 28 Aug 2026 22:00:07 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33292"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Some Malicious PE Stats, (Thu, Aug 27th)
+                </a>
+            </h3>
+
+            <p>During my last FOR610 session, a student asked me if I had some statistics in mind about the compilers used to generate malicious PE files? A couple of months ago, I shared some stats about the trend in 64bits VS. 32bits malware[1]. Can we go a bit further? I (vibe-)coded a Python script based on the pefile library[2] to extract some info from the PE head...</p>
+            <div class="published">Fri, 28 Aug 2026 07:04:13 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">SANS Internet Storm Center</span>
+                <span>Threat activity</span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33294"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Friday, August 28th, 2026 https://isc.sans.edu/podcastdetail/10072, (Fri, Aug 28th)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+            <div class="published">Fri, 28 Aug 2026 02:00:02 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/sorry-i-cant-help-with-that-how-your-guardrails-might-become-the-attackers-best-friend/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    “Sorry, I can’t help with that”: How your guardrails might become the attacker’s best friend
+                </a>
+            </h3>
+
+            <p>In his first Threat Source newsletter, David Bianco explores the critical need for operational sovereignty in customizing AI guardrails to maintain the defender’s advantage.</p>
+            <div class="published">Thu, 27 Aug 2026 18:00:24 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/27/whats-new-in-microsoft-security-august-2026/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ​​​​​​What’s new in Microsoft Security: August 2026
+                </a>
+            </h3>
+
+            <p>This month’s updates provide new capabilities to help organizations gain insights into agent activity, expand security coverage across supported environments, and enhance security management across their environments. The post ​​​​​​What’s new in Microsoft Security: August 2026 appeared first on Microsoft Security Blog .</p>
+            <div class="published">Thu, 27 Aug 2026 16:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/javascript-obfuscation-from-party-trick-to-phishing-kit/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    JavaScript obfuscation: From party trick to phishing kit
+                </a>
+            </h3>
+
+            <p>Learn the basics of what obfuscation is, why a researcher would try to reverse it, and several ways to approach the problem.</p>
+            <div class="published">Thu, 27 Aug 2026 10:00:27 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/privacy/ai-powered-osint-why-everyone-viable-target-fraud/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    AI-driven OSINT in the wrong hands – and why everyone could be a target for fraud
+                </a>
+            </h3>
+
+            <p>It’s getting cheaper and easier for cybercriminals to research potential victims. Here’s what’s still in your control.</p>
+            <div class="published">Thu, 27 Aug 2026 09:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    When AI infrastructure becomes the target: Securing gateways and control points
+                </a>
+            </h3>
+
+            <p>Microsoft Threat Intelligence examines attacks on exposed AI workloads, including LiteLLM gateway exploitation, credential harvesting, persistence, and cryptomining activity. The post When AI infrastructure becomes the target: Securing gateways and control points appeared first on Microsoft Security Blog .</p>
+            <div class="published">Wed, 26 Aug 2026 16:43:53 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/choose-your-fighter-balancing-competing-requirements-to-select-models-for-your-ai-soc/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Choose your fighter: Balancing competing requirements to select models for your AI SOC
+                </a>
+            </h3>
+
+            <p>Selecting a model for your security operations center (SOC) and digital forensics and incident response (DFIR) tasks is important, but selecting the best one is more involved than you might think. Here&#x27;s how to choose.</p>
+            <div class="published">Wed, 26 Aug 2026 10:00:05 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://azure.microsoft.com/en-us/blog/the-patch-window-is-collapsing-why-security-needs-a-new-control-plane/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    The patch window is collapsing: Why security needs a new control plane
+                </a>
+            </h3>
+
+            <p>Organizations need protection that operates in the gap between discovery and remediation. The post The patch window is collapsing: Why security needs a new control plane appeared first on Microsoft Security Blog .</p>
+            <div class="published">Tue, 25 Aug 2026 16:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    The State of AI-Enabled Malware August 2026: From Brand Abuse to Agentic Execution
+                </a>
+            </h3>
+
+            <p>Explore Unit 42 research on AI-enabled malware. Learn how existing behavioral detection and endpoint analytics stop AI-authored code before execution. The post The State of AI-Enabled Malware August 2026: From Brand Abuse to Agentic Execution appeared first on Unit 42 .</p>
+            <div class="published">Tue, 25 Aug 2026 10:00:57 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/the-safety-penalty-reclaiming-operational-sovereignty-in-the-age-of-ai/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    The safety penalty: Reclaiming operational sovereignty in the age of AI
+                </a>
+            </h3>
+
+            <p>As frontier AI models become increasingly restrictive, security teams are facing a &quot;safety penalty&quot; that hampers real-time incident response. Discover how organizations can move toward operational sovereignty to ensure their defensive AI keeps pace with unconstrained adversaries.</p>
+            <div class="published">Tue, 25 Aug 2026 10:00:22 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">The DFIR Report</span>
+                <span>Incident analysis</span>
+            </div>
+
+            <h3>
+                <a href="https://thedfirreport.com/2026/08/24/bengalseo-part-1-anatomy-of-the-operation/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    BengalSEO Part 1: Anatomy of the Operation
+                </a>
+            </h3>
+
+            <p>Key Takeaways The DFIR Report Offerings Check out our Products here and our Services here. Want a demo, more information on our services, pricing or just want to chat? Get in Touch Contact us today for pricing or a demo! Case Summary In March 2026, our team identified an SEO poisoning campaign leading to malware deployment […] The post BengalSEO Part 1: A...</p>
+            <div class="published">Mon, 24 Aug 2026 14:28:41 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/sdlc-supply-chain/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Connecting the Dots: Securing the Overlooked Corners of the Software Development Lifecycle (SDLC) Supply Chain
+                </a>
+            </h3>
+
+            <p>Attackers are targeting CI/CD pipelines and developer tools instead of application code, requiring total SDLC visibility and strict security controls The post Connecting the Dots: Securing the Overlooked Corners of the Software Development Lifecycle (SDLC) Supply Chain appeared first on Unit 42 .</p>
+            <div class="published">Fri, 21 Aug 2026 23:00:21 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/is-cyber-missing-the-marque/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Is Cyber missing the Marque?
+                </a>
+            </h3>
+
+            <p>In this week&#x27;s newsletter, new author Mick Baccio introduces himself and explores the operational and security implications of the new White House memorandum regarding private sector participation in government-authorized offensive cyber operations.</p>
+            <div class="published">Thu, 20 Aug 2026 18:00:18 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/uat-10147-deploys-spectre-a-cross-platform-implant-with-linux-rootkit-and-byovd-capabilities/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    UAT-10147 deploys SPECTRE: A cross-platform implant with Linux rootkit and BYOVD capabilities
+                </a>
+            </h3>
+
+            <p>The newly identified SPECTRE implant represents an evolution in commodity intrusion tooling, integrating cross-platform C2 operations, process injection, credential theft, anti-analysis protections, and kernel-level endpoint detection and response (EDR) bypass functionality.</p>
+            <div class="published">Thu, 20 Aug 2026 10:00:50 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/uat-10147-chinese-speaking-adversary-integrates-agentic-ai-into-post-compromise-operations/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    UAT-10147: Chinese-speaking adversary integrates agentic AI into post-compromise operations
+                </a>
+            </h3>
+
+            <p>Cisco Talos discovered a Chinese-speaking cybercrime group, tracked as UAT-10147, that targets a wide range of vulnerable web servers. This is an overview of the campaign, examining the countries affected, potential impact of BadIIS infections, the attack chain, and post-compromise tactics.</p>
+            <div class="published">Thu, 20 Aug 2026 10:00:32 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/communication-channel-identity-risks/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Identity Abuse Through Trusted Communication Channels
+                </a>
+            </h3>
+
+            <p>Unit 42 details how attackers exploit enterprise collaboration tools for identity phishing and credential theft. Discover key defense strategies. The post Identity Abuse Through Trusted Communication Channels appeared first on Unit 42 .</p>
+            <div class="published">Thu, 20 Aug 2026 10:00:25 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/19/microsoft-named-a-leader-in-the-frost-radar-cloud-workload-protection-platforms-2026/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Microsoft named a Leader in the Frost Radar™: Cloud Workload Protection Platforms, 2026
+                </a>
+            </h3>
+
+            <p>Microsoft is named a visionary leader in the 2026 Frost Radar for Cloud Workload Protection Platforms, recognized for unified runtime security with Microsoft Defender for Cloud. The post Microsoft named a Leader in the Frost Radar™: Cloud Workload Protection Platforms, 2026 appeared first on Microsoft Security Blog .</p>
+            <div class="published">Wed, 19 Aug 2026 17:30:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/describing-attacks-with-crime-script-analysis/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Describing attacks with crime script analysis
+                </a>
+            </h3>
+
+            <p>Martin explores how using crime script analysis to describe an attack with everyday language makes the situation accessible to non-technical audiences and identify points where the crime can be disrupted.</p>
+            <div class="published">Wed, 19 Aug 2026 10:00:52 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/large-scale-credential-attacks/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18)
+                </a>
+            </h3>
+
+            <p>In August 2026, the actor TheHatman claimed to have stolen large volume of credentials from organizations&#x27; Microsoft Entra tenants. We provide guidance on mitigating large-scale credential attacks. The post Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18) appeared first on Unit 42 .</p>
+            <div class="published">Tue, 18 Aug 2026 19:05:33 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/18/hunting-macsync-stealer-infrastructure-through-behavioral-pivots/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Hunting MacSync Stealer infrastructure through behavioral pivots
+                </a>
+            </h3>
+
+            <p>MacSync Stealer rapidly rotates domains to evade detection, but its behavior remains consistent. Learn how Microsoft uncovered 30+ related domains using durable hunting pivots. The post Hunting MacSync Stealer infrastructure through behavioral pivots appeared first on Microsoft Security Blog .</p>
+            <div class="published">Tue, 18 Aug 2026 17:08:28 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/business-security/qr-code-phishing-slip-past-corporate-security-measures/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    How QR-code phishing can slip past corporate security measures
+                </a>
+            </h3>
+
+            <p>Quishing has become a popular alternative to traditional phishing. Here’s how businesses can close the gap.</p>
+            <div class="published">Mon, 17 Aug 2026 09:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/curiouser-and-curiouser/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Curiouser and Curiouser
+                </a>
+            </h3>
+
+            <p>In this edition of the Threat Source newsletter, William reflects on the “Make Hazel a Hacker” segment in Beers with Talos, and how cybersecurity is a field where questions can lead to multiple correct answers.</p>
+            <div class="published">Thu, 13 Aug 2026 18:00:18 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-vulnerability-discovery-decline-ai-era/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Black Hat USA 2026: Will vulnerability discovery eventually decline in the AI era?
+                </a>
+            </h3>
+
+            <p>And will today’s surge in AI-driven vulnerability discovery eventually make tomorrow’s software safer?</p>
+            <div class="published">Thu, 13 Aug 2026 14:30:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Cisco Talos</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://blog.talosintelligence.com/dissecting-the-jwr-phishing-framework/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Dissecting the JWR phishing framework
+                </a>
+            </h3>
+
+            <p>Cisco Talos recently identified an undocumented phishing framework, internally branded &quot;JWR&quot; by its developer, built to convincingly impersonate checkout and login pages across major payment and shopping platforms.</p>
+            <div class="published">Thu, 13 Aug 2026 10:00:35 GMT</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-hugging-face-hack-human-responsibility/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Black Hat USA 2026: What the Hugging Face hack tells us about human responsibility
+                </a>
+            </h3>
+
+            <p>The incident involving OpenAI models shows that autonomous hacks make human oversight more important, not less</p>
+            <div class="published">Thu, 13 Aug 2026 09:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-ai-racing-cybersecurity-controls/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Black Hat USA 2026: AI is racing ahead of cybersecurity controls
+                </a>
+            </h3>
+
+            <p>AI took center stage, but the clearest lesson was less about what AI can do than about who is accountable when something goes wrong</p>
+            <div class="published">Wed, 12 Aug 2026 13:28:07 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/kimwolf-v7-botnet-malware/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Kimwolf v7: An Evolution of the Kimwolf Botnet
+                </a>
+            </h3>
+
+            <p>Discover how Kimwolf v7 targets Android IoT devices with HTTP/2 DDoS fingerprinting, Ethereum ENS C2 resolution and Tor backup routing. The post Kimwolf v7: An Evolution of the Kimwolf Botnet appeared first on Unit 42 .</p>
+            <div class="published">Tue, 11 Aug 2026 10:00:16 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Unit 42</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    The Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications
+                </a>
+            </h3>
+
+            <p>Analysis of the Aeternum botnet loader, a threat leveraging Polygon blockchain smart contracts for decentralized C2 infrastructure and payload execution. The post The Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications appeared first on Unit 42 .</p>
+            <div class="published">Mon, 10 Aug 2026 22:00:02 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">Microsoft Security Blog</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.microsoft.com/en-us/security/blog/2026/08/10/microsoft-named-a-leader-in-the-2026-idc-marketscape-for-mdr-mxdr-for-the-enterprise/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Microsoft named a Leader in the 2026 IDC MarketScape for MDR/MXDR for the Enterprise
+                </a>
+            </h3>
+
+            <p>Microsoft is named a Leader in the 2026 IDC MarketScape for MDR services. Discover how Microsoft Defender Experts MDR combines AI, threat intelligence, and human expertise. The post Microsoft named a Leader in the 2026 IDC MarketScape for MDR/MXDR for the Enterprise appeared first on Microsoft Security Blog .</p>
+            <div class="published">Mon, 10 Aug 2026 16:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/kids-online/ai-tutors-safe-kids/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Are AI tutors safe for your kids?
+                </a>
+            </h3>
+
+            <p>AI tutors can offer useful support, but their quality and safeguards vary widely. Here’s what parents should check before handing one to a child.</p>
+            <div class="published">Mon, 10 Aug 2026 09:00:00 +0000</div>
+        </article>
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">WeLiveSecurity</span>
+                <span>Threat research</span>
+            </div>
+
+            <h3>
+                <a href="https://www.welivesecurity.com/en/videos/month-security-tony-anscombe-july-2026/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    This month in security with Tony Anscombe – July 2026 edition
+                </a>
+            </h3>
+
+            <p>OpenAI models going rogue, the first documented agentic ransomware operation, and an emergent AI-driven supply chain threat made for a packed July roundup</p>
+            <div class="published">Fri, 31 Jul 2026 14:14:15 +0000</div>
+        </article>
+        
+    </section>
+
+    <h2 class="section-heading">Malware pulse</h2>
 
     <section class="panel">
-        <h2>Malware pulse</h2>
-        <span class='tag'>&quot;Vidar&quot; · 280</span><span class='tag'>&quot;MacSync&quot; · 221</span><span class='tag'>&quot;Unknown malware&quot; · 129</span><span class='tag'>&quot;Sliver&quot; · 95</span><span class='tag'>&quot;AsyncRAT&quot; · 56</span><span class='tag'>&quot;Medusa&quot; · 47</span><span class='tag'>&quot;IClickFix&quot; · 45</span><span class='tag'>&quot;Coinminer&quot; · 30</span>
+        <span class='tag'>&quot;Vidar&quot; · 280</span><span class='tag'>&quot;MacSync&quot; · 221</span><span class='tag'>&quot;Unknown malware&quot; · 129</span><span class='tag'>&quot;Sliver&quot; · 95</span><span class='tag'>&quot;AsyncRAT&quot; · 56</span><span class='tag'>&quot;Medusa&quot; · 47</span><span class='tag'>&quot;IClickFix&quot; · 45</span><span class='tag'>&quot;Coinminer&quot; · 30</span><span class='tag'>&quot;ClearFake&quot; · 25</span><span class='tag'>&quot;Remus&quot; · 19</span>
     </section>
 
-    <section class="panel" style="margin-top:16px">
-        <h2>Threat activity</h2>
-        <span class='tag'>&quot;botnet_cc&quot; · 680</span><span class='tag'>&quot;payload&quot; · 294</span><span class='tag'>&quot;payload_delivery&quot; · 140</span>
+    <h2 class="section-heading">Technical activity</h2>
+
+    <section class="panel">
+        <span class='tag'>&quot;botnet_cc&quot; · 680</span><span class='tag'>&quot;payload&quot; · 294</span><span class='tag'>&quot;payload_delivery&quot; · 139</span>
     </section>
 
-    <section class="panel" style="margin-top:16px">
-        <h2>Recent indicators</h2>
+    <h2 class="section-heading">Recent indicators</h2>
+
+    <section class="panel">
         <p class="muted">
-            Indicators are unverified external intelligence and should not
-            be treated as automatic blocking recommendations.
+            Indicators originate from public external intelligence.
+            Presence on this page is not an automatic blocking
+            recommendation.
         </p>
 
         <div class="table-wrapper">
@@ -148,6 +1176,7 @@
                         <th>Confidence</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     
         <tr>
@@ -156,7 +1185,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -165,7 +1198,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -174,7 +1211,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -183,7 +1224,11 @@
             <td>&quot;ip:port&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -192,7 +1237,11 @@
             <td>&quot;ip:port&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -201,7 +1250,11 @@
             <td>&quot;ip:port&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -210,7 +1263,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -219,7 +1276,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -228,7 +1289,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -237,7 +1302,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -246,7 +1315,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -255,7 +1328,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -264,7 +1341,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -273,7 +1354,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -282,7 +1367,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -291,7 +1380,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -300,7 +1393,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -309,7 +1406,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -318,7 +1419,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -327,7 +1432,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -336,7 +1445,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -345,7 +1458,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -354,7 +1471,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -363,7 +1484,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -372,7 +1497,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -381,7 +1510,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -390,7 +1523,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -399,7 +1536,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -408,7 +1549,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -417,7 +1562,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -426,7 +1575,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -435,7 +1588,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -444,7 +1601,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -453,7 +1614,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -462,7 +1627,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -471,7 +1640,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -480,7 +1653,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -489,7 +1666,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -498,7 +1679,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -507,7 +1692,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -516,7 +1705,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -525,7 +1718,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -534,7 +1731,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -543,7 +1744,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -552,7 +1757,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -561,7 +1770,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -570,7 +1783,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -579,7 +1796,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;IClickFix&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -588,7 +1809,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;IClickFix&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -597,7 +1822,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -606,7 +1835,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -615,7 +1848,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Unknown malware&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -624,7 +1861,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Mirai&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -633,7 +1874,11 @@
             <td>&quot;ip:port&quot;</td>
             <td>&quot;Mirai&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -642,7 +1887,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Mirai&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -651,7 +1900,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Mirai&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -660,7 +1913,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -669,7 +1926,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -678,7 +1939,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -687,7 +1952,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -696,7 +1965,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -705,7 +1978,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -714,7 +1991,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -723,7 +2004,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -732,7 +2017,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -741,7 +2030,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -750,7 +2043,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -759,7 +2056,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -768,7 +2069,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;ClearFake&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -777,7 +2082,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -786,7 +2095,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;Vidar&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -795,7 +2108,11 @@
             <td>&quot;url&quot;</td>
             <td>&quot;ClearFake&quot;</td>
             <td>&quot;payload_delivery&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -804,7 +2121,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -813,7 +2134,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -822,7 +2147,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -831,7 +2160,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -840,7 +2173,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -849,7 +2186,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -858,7 +2199,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -867,7 +2212,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -876,7 +2225,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -885,7 +2238,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -894,7 +2251,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -903,7 +2264,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -912,7 +2277,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -921,7 +2290,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -930,7 +2303,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -939,7 +2316,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -948,7 +2329,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -957,7 +2342,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -966,7 +2355,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -975,7 +2368,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -984,7 +2381,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -993,7 +2394,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1002,7 +2407,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1011,7 +2420,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1020,7 +2433,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1029,7 +2446,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1038,7 +2459,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1047,7 +2472,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1056,7 +2485,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1065,7 +2498,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1074,7 +2511,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1083,7 +2524,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1092,7 +2537,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1101,7 +2550,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1110,7 +2563,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1119,7 +2576,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1128,7 +2589,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1137,7 +2602,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1146,7 +2615,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1155,7 +2628,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1164,7 +2641,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1173,7 +2654,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1182,7 +2667,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1191,7 +2680,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1200,7 +2693,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1209,7 +2706,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1218,7 +2719,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1227,7 +2732,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1236,7 +2745,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1245,7 +2758,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1254,7 +2771,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1263,7 +2784,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1272,7 +2797,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1281,7 +2810,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1290,7 +2823,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1299,7 +2836,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1308,7 +2849,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1317,7 +2862,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1326,7 +2875,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1335,7 +2888,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1344,7 +2901,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1353,7 +2914,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1362,7 +2927,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1371,7 +2940,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1380,7 +2953,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1389,7 +2966,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1398,7 +2979,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1407,7 +2992,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1416,7 +3005,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1425,7 +3018,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1434,7 +3031,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1443,7 +3044,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1452,7 +3057,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1461,7 +3070,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1470,7 +3083,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1479,7 +3096,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1488,7 +3109,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1497,7 +3122,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1506,7 +3135,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1515,7 +3148,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1524,7 +3161,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1533,7 +3174,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1542,7 +3187,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1551,7 +3200,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1560,7 +3213,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1569,7 +3226,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1578,7 +3239,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1587,7 +3252,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1596,7 +3265,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1605,7 +3278,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1614,7 +3291,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1623,7 +3304,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1632,7 +3317,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1641,7 +3330,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1650,7 +3343,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1659,7 +3356,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1668,7 +3369,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1677,7 +3382,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1686,7 +3395,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1695,7 +3408,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1704,7 +3421,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1713,7 +3434,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1722,7 +3447,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1731,7 +3460,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1740,7 +3473,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1749,7 +3486,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1758,7 +3499,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1767,7 +3512,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1776,7 +3525,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1785,7 +3538,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1794,7 +3551,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1803,7 +3564,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1812,7 +3577,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1821,7 +3590,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1830,7 +3603,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1839,7 +3616,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1848,7 +3629,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1857,7 +3642,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1866,7 +3655,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1875,7 +3668,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1884,7 +3681,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1893,7 +3694,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1902,7 +3707,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1911,7 +3720,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1920,7 +3733,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1929,7 +3746,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1938,7 +3759,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1947,7 +3772,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1956,7 +3785,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1965,7 +3798,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1974,7 +3811,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1983,7 +3824,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -1992,7 +3837,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2001,7 +3850,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2010,7 +3863,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2019,7 +3876,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2028,7 +3889,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2037,7 +3902,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2046,7 +3915,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2055,7 +3928,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2064,7 +3941,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2073,7 +3954,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2082,7 +3967,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2091,7 +3980,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2100,7 +3993,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2109,7 +4006,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2118,7 +4019,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2127,7 +4032,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2136,7 +4045,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2145,7 +4058,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2154,7 +4071,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2163,7 +4084,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2172,7 +4097,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2181,7 +4110,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2190,7 +4123,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2199,7 +4136,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2208,7 +4149,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2217,7 +4162,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2226,7 +4175,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2235,7 +4188,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2244,7 +4201,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2253,7 +4214,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2262,7 +4227,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2271,7 +4240,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2280,7 +4253,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2289,7 +4266,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2298,7 +4279,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2307,7 +4292,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2316,7 +4305,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2325,7 +4318,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2334,7 +4331,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2343,7 +4344,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2352,7 +4357,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2361,7 +4370,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2370,7 +4383,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2379,7 +4396,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2388,7 +4409,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
         <tr>
@@ -2397,7 +4422,11 @@
             <td>&quot;domain&quot;</td>
             <td>&quot;MacSync&quot;</td>
             <td>&quot;botnet_cc&quot;</td>
-            <td><span class="confidence">0%</span></td>
+            <td>
+                <span class="confidence">
+                    0%
+                </span>
+            </td>
         </tr>
         
                 </tbody>
@@ -2405,11 +4434,12 @@
         </div>
     </section>
 
-    <p class="muted">
-        Source:
-        <a href="https://threatfox.abuse.ch/" target="_blank"
-           rel="noopener noreferrer">ThreatFox by abuse.ch</a>
-    </p>
+    <footer>
+        Research content remains with its original publishers.
+        This radar displays metadata, short feed excerpts and links
+        to the original sources. Technical indicators are supplied
+        by ThreatFox, operated by abuse.ch.
+    </footer>
 </main>
 </body>
 </html>
