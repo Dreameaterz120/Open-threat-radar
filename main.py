@@ -51,8 +51,10 @@ def fetch_threatfox():
 
     records = []
 
-    for row in csv.reader(io.StringIO("\n".join(data_lines))):
-        values = [value.strip() for value in row]
+       for row in csv.reader(
+        io.StringIO("\n".join(data_lines)),
+        skipinitialspace=True,
+    ):
 
         if len(values) != len(THREATFOX_COLUMNS):
             continue
