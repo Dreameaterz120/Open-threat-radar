@@ -217,7 +217,7 @@
         <h1>Open Threat Radar</h1>
 
         <div class="muted">
-            Last updated: 2026-09-05 00:09 UTC
+            Last updated: 2026-09-05 04:36 UTC
         </div>
 
         <p class="intro muted">
@@ -246,14 +246,14 @@
         <div class="card">
             Recent indicators
             <span class="number">
-                5541
+                5561
             </span>
         </div>
 
         <div class="card">
             High-confidence IOCs
             <span class="number">
-                5304
+                5323
             </span>
         </div>
     </section>
@@ -265,6 +265,31 @@
     </h2>
 
     <section class="reports">
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">
+                    SANS Internet Storm Center
+                </span>
+                <span>
+                    Threat activity
+                </span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33312"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    numbat - AI agent observability, (Fri, Sep 4th)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+
+            <div class="published">
+                Sat, 05 Sep 2026 03:39:52 GMT
+            </div>
+        </article>
         
         <article class="report">
             <div class="report-meta">
@@ -813,31 +838,6 @@
 
             <div class="published">
                 Fri, 28 Aug 2026 22:00:07 +0000
-            </div>
-        </article>
-        
-        <article class="report">
-            <div class="report-meta">
-                <span class="source">
-                    SANS Internet Storm Center
-                </span>
-                <span>
-                    Threat activity
-                </span>
-            </div>
-
-            <h3>
-                <a href="https://isc.sans.edu/diary/rss/33292"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Some Malicious PE Stats, (Thu, Aug 27th)
-                </a>
-            </h3>
-
-            <p>During my last FOR610 session, a student asked me if I had some statistics in mind about the compilers used to generate malicious PE files? A couple of months ago, I shared some stats about the trend in 64bits VS. 32bits malware[1]. Can we go a bit further? I (vibe-)coded a Python script based on the pefile library[2] to extract some info from the PE head...</p>
-
-            <div class="published">
-                Fri, 28 Aug 2026 07:04:13 GMT
             </div>
         </article>
         
@@ -1523,7 +1523,7 @@
     </h2>
 
     <section class="panel">
-        <span class='tag'>Cobalt Strike · 1295</span><span class='tag'>IClickFix · 754</span><span class='tag'>PureRAT · 545</span><span class='tag'>AsyncRAT · 374</span><span class='tag'>Vidar · 297</span><span class='tag'>AdaptixC2 · 228</span><span class='tag'>ClearFake · 227</span><span class='tag'>HypeAgent · 111</span><span class='tag'>DCRat · 108</span><span class='tag'>Unknown Stealer · 91</span>
+        <span class='tag'>Cobalt Strike · 1295</span><span class='tag'>IClickFix · 756</span><span class='tag'>PureRAT · 545</span><span class='tag'>AsyncRAT · 374</span><span class='tag'>Vidar · 295</span><span class='tag'>ClearFake · 230</span><span class='tag'>AdaptixC2 · 228</span><span class='tag'>HypeAgent · 111</span><span class='tag'>VShell · 108</span><span class='tag'>DCRat · 108</span>
     </section>
 
     <h2 class="section-heading">
@@ -1531,7 +1531,7 @@
     </h2>
 
     <section class="panel">
-        <span class='tag'>botnet_cc · 4120</span><span class='tag'>payload_delivery · 1158</span><span class='tag'>payload · 261</span><span class='tag'>cc_skimming · 2</span>
+        <span class='tag'>botnet_cc · 4135</span><span class='tag'>payload_delivery · 1163</span><span class='tag'>payload · 261</span><span class='tag'>cc_skimming · 2</span>
     </section>
 
     <h2 class="section-heading">
@@ -1560,6 +1560,531 @@
 
                 <tbody>
                     
+        <tr>
+            <td>2026-09-05 04:27:25</td>
+            <td>
+                <code>eamznepn.us-en-us-morningcoffeeritual.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 04:23:58</td>
+            <td>
+                <code>us-en-us-morningcoffeeritual.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 04:10:05</td>
+            <td>
+                <code>zynigoci.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 04:05:06</td>
+            <td>
+                <code>154.91.61.103:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 04:05:05</td>
+            <td>
+                <code>154.91.61.111:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 04:05:05</td>
+            <td>
+                <code>154.91.61.100:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:21:56</td>
+            <td>
+                <code>kj4t0j98.us-en-us-xenburn.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:20:34</td>
+            <td>
+                <code>us-en-us-xenburn.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:05:09</td>
+            <td>
+                <code>154.91.61.114:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:05:09</td>
+            <td>
+                <code>154.91.61.115:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:05:08</td>
+            <td>
+                <code>154.91.61.119:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:05:07</td>
+            <td>
+                <code>154.91.61.118:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 03:05:05</td>
+            <td>
+                <code>154.91.61.124:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:58:05</td>
+            <td>
+                <code>18ttucts.us-en-us-eloncode.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:55:47</td>
+            <td>
+                <code>us-en-us-eloncode.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:37:49</td>
+            <td>
+                <code>1hji53mps8.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:31:15</td>
+            <td>
+                <code>tijide.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:05:05</td>
+            <td>
+                <code>154.91.61.117:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 02:05:04</td>
+            <td>
+                <code>154.91.61.116:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:50:03</td>
+            <td>
+                <code>http://sghecc.com/equal/five/fre.php</code>
+            </td>
+            <td>url</td>
+            <td>Loki Password Stealer (PWS)</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:05:08</td>
+            <td>
+                <code>154.91.61.125:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:05:07</td>
+            <td>
+                <code>154.91.61.126:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:05:06</td>
+            <td>
+                <code>154.91.61.120:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:05:05</td>
+            <td>
+                <code>154.91.61.123:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:05:05</td>
+            <td>
+                <code>154.91.61.121:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 01:02:34</td>
+            <td>
+                <code>whitedierdre.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:54:15</td>
+            <td>
+                <code>agrou68423.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:38:10</td>
+            <td>
+                <code>https://cdn.jsdelivr.net/gh/frantario/rtr57-44/afa1194</code>
+            </td>
+            <td>url</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:14:57</td>
+            <td>
+                <code>e2u8o9ap.us-en-us-levium.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:13:37</td>
+            <td>
+                <code>us-en-us-levium.com</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:05:07</td>
+            <td>
+                <code>154.91.62.114:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:05:06</td>
+            <td>
+                <code>154.91.62.112:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:05:06</td>
+            <td>
+                <code>154.91.62.115:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:05:05</td>
+            <td>
+                <code>154.91.62.102:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-05 00:05:04</td>
+            <td>
+                <code>154.91.62.104:8084</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
         <tr>
             <td>2026-09-04 23:26:21</td>
             <td>
@@ -4777,531 +5302,6 @@
             </td>
             <td>ip:port</td>
             <td>Unknown RAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:29:44</td>
-            <td>
-                <code>94.154.43.107:9111</code>
-            </td>
-            <td>ip:port</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:28:24</td>
-            <td>
-                <code>zel5cv5nse.workers.dev</code>
-            </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>fipromwie.cfd</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>tootiswe.cfd</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>zecoorigelabs.shop</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>twigoamwu.cfd</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>quantum-flex.cfd</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:23:10</td>
-            <td>
-                <code>prism-tech.cfd</code>
-            </td>
-            <td>domain</td>
-            <td>Unknown malware</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:16:13</td>
-            <td>
-                <code>rochardson.me</code>
-            </td>
-            <td>domain</td>
-            <td>KongTuke</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:16:12</td>
-            <td>
-                <code>https://rochardson.me/api/v1/session</code>
-            </td>
-            <td>url</td>
-            <td>KongTuke</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:16:12</td>
-            <td>
-                <code>https://rochardson.me/api/v1/verify</code>
-            </td>
-            <td>url</td>
-            <td>KongTuke</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:05:08</td>
-            <td>
-                <code>154.91.57.106:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:05:07</td>
-            <td>
-                <code>154.91.59.116:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:05:06</td>
-            <td>
-                <code>154.91.63.124:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:05:06</td>
-            <td>
-                <code>154.91.59.117:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 11:00:50</td>
-            <td>
-                <code>https://check-access.info/</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:48:26</td>
-            <td>
-                <code>3xoi10iy.usen-glucotrust-bites.com</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:40:23</td>
-            <td>
-                <code>http://bestals.shop:8592/projects</code>
-            </td>
-            <td>url</td>
-            <td>Remus</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:30:32</td>
-            <td>
-                <code>http://neortal.click:8321/folders</code>
-            </td>
-            <td>url</td>
-            <td>Remus</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:30:30</td>
-            <td>
-                <code>http://bestals.shop:8592/subscriptions</code>
-            </td>
-            <td>url</td>
-            <td>Remus</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:05:09</td>
-            <td>
-                <code>154.91.63.126:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:05:08</td>
-            <td>
-                <code>154.91.63.125:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:05:05</td>
-            <td>
-                <code>154.91.63.120:8084</code>
-            </td>
-            <td>ip:port</td>
-            <td>VShell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 10:00:56</td>
-            <td>
-                <code>202.61.160.202:8383</code>
-            </td>
-            <td>ip:port</td>
-            <td>Unknown RAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:56:33</td>
-            <td>
-                <code>https://cloudyrobots.online</code>
-            </td>
-            <td>url</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:56:33</td>
-            <td>
-                <code>https://benotrobot.online</code>
-            </td>
-            <td>url</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:56:32</td>
-            <td>
-                <code>benotrobot.online</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:55:20</td>
-            <td>
-                <code>g9564ynbca.workers.dev</code>
-            </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:48:50</td>
-            <td>
-                <code>94.103.1.61:443</code>
-            </td>
-            <td>ip:port</td>
-            <td>PureRAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:48:49</td>
-            <td>
-                <code>93.233.109.96:51125</code>
-            </td>
-            <td>ip:port</td>
-            <td>AsyncRAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:48:49</td>
-            <td>
-                <code>93.66.148.17:9002</code>
-            </td>
-            <td>ip:port</td>
-            <td>Brute Ratel C4</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:48:36</td>
-            <td>
-                <code>85.9.198.7:8443</code>
-            </td>
-            <td>ip:port</td>
-            <td>Havoc</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:48:16</td>
-            <td>
-                <code>62.60.155.33:1458</code>
-            </td>
-            <td>ip:port</td>
-            <td>DCRat</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:47:31</td>
-            <td>
-                <code>34.122.131.42:9000</code>
-            </td>
-            <td>ip:port</td>
-            <td>Evilginx</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-09-04 09:47:29</td>
-            <td>
-                <code>31.77.161.250:2911</code>
-            </td>
-            <td>ip:port</td>
-            <td>AdaptixC2</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
