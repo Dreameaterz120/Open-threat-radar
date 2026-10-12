@@ -217,7 +217,7 @@
         <h1>Open Threat Radar</h1>
 
         <div class="muted">
-            Last updated: 2026-10-12 01:23 UTC
+            Last updated: 2026-10-12 09:20 UTC
         </div>
 
         <p class="intro muted">
@@ -246,14 +246,14 @@
         <div class="card">
             Recent indicators
             <span class="number">
-                5707
+                5740
             </span>
         </div>
 
         <div class="card">
             High-confidence IOCs
             <span class="number">
-                5364
+                5402
             </span>
         </div>
     </section>
@@ -265,6 +265,31 @@
     </h2>
 
     <section class="reports">
+        
+        <article class="report">
+            <div class="report-meta">
+                <span class="source">
+                    SANS Internet Storm Center
+                </span>
+                <span>
+                    Threat activity
+                </span>
+            </div>
+
+            <h3>
+                <a href="https://isc.sans.edu/diary/rss/33416"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ISC Stormcast For Monday, October 12th, 2026 https://isc.sans.edu/podcastdetail/10132, (Mon, Oct 12th)
+                </a>
+            </h3>
+
+            <p>No summary supplied by this feed.</p>
+
+            <div class="published">
+                Mon, 12 Oct 2026 02:00:03 GMT
+            </div>
+        </article>
         
         <article class="report">
             <div class="report-meta">
@@ -813,31 +838,6 @@
 
             <div class="published">
                 Mon, 05 Oct 2026 02:00:02 GMT
-            </div>
-        </article>
-        
-        <article class="report">
-            <div class="report-meta">
-                <span class="source">
-                    SANS Internet Storm Center
-                </span>
-                <span>
-                    Threat activity
-                </span>
-            </div>
-
-            <h3>
-                <a href="https://isc.sans.edu/diary/rss/33396"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    TTY Logs and the Data it Captures, (Sun, Oct 4th)
-                </a>
-            </h3>
-
-            <p>For an experiment, I created a script [1] that parses and send the TTY logs collected from actors or bots activity that run various commands after they successfully login the DShield sensor. Those TTY logs are sent daily at the end of each day to the DShield SIEM [2] to be correlated with all the data.</p>
-
-            <div class="published">
-                Mon, 05 Oct 2026 00:15:00 GMT
             </div>
         </article>
         
@@ -1523,7 +1523,7 @@
     </h2>
 
     <section class="panel">
-        <span class='tag'>Cobalt Strike · 1322</span><span class='tag'>PureRAT · 616</span><span class='tag'>AsyncRAT · 423</span><span class='tag'>Vidar · 376</span><span class='tag'>AdaptixC2 · 262</span><span class='tag'>Mirai · 231</span><span class='tag'>IClickFix · 151</span><span class='tag'>VShell · 132</span><span class='tag'>DanaBot · 130</span><span class='tag'>Remcos · 118</span>
+        <span class='tag'>Cobalt Strike · 1317</span><span class='tag'>PureRAT · 608</span><span class='tag'>Vidar · 419</span><span class='tag'>AsyncRAT · 411</span><span class='tag'>AdaptixC2 · 261</span><span class='tag'>Mirai · 205</span><span class='tag'>Remcos · 136</span><span class='tag'>IClickFix · 136</span><span class='tag'>VShell · 131</span><span class='tag'>DanaBot · 130</span>
     </section>
 
     <h2 class="section-heading">
@@ -1531,7 +1531,7 @@
     </h2>
 
     <section class="panel">
-        <span class='tag'>botnet_cc · 4479</span><span class='tag'>payload · 687</span><span class='tag'>payload_delivery · 541</span>
+        <span class='tag'>botnet_cc · 4540</span><span class='tag'>payload · 671</span><span class='tag'>payload_delivery · 529</span>
     </section>
 
     <h2 class="section-heading">
@@ -1561,492 +1561,12 @@
                 <tbody>
                     
         <tr>
-            <td>2026-10-12 01:10:48</td>
+            <td>2026-10-12 09:12:02</td>
             <td>
-                <code>tol.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 01:10:48</td>
-            <td>
-                <code>https://tol.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:58:24</td>
-            <td>
-                <code>http://116.58.62.74/av.scr</code>
-            </td>
-            <td>url</td>
-            <td>Coinminer</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:10</td>
-            <td>
-                <code>http://113.45.224.122:16688/?h=113.45.224.122&amp;p=16688&amp;t=ws&amp;a=l64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>Mirai</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:08</td>
-            <td>
-                <code>http://113.45.224.122:16688/?h=113.45.224.122&amp;p=16688&amp;t=ws&amp;a=l32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>Mirai</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:07</td>
-            <td>
-                <code>http://113.45.224.122:16688/?h=113.45.224.122&amp;p=16688&amp;t=tcp&amp;a=l64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>SNOWLIGHT</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:06</td>
-            <td>
-                <code>http://113.45.224.122:16688/?h=113.45.224.122&amp;p=16688&amp;t=tcp&amp;a=l32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>SNOWLIGHT</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:04</td>
-            <td>
-                <code>http://112.124.52.105:8085/?h=112.124.52.105&amp;p=8085&amp;t=tcp&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:57:03</td>
-            <td>
-                <code>http://112.124.52.105:8085/?h=112.124.52.105&amp;p=8085&amp;t=tcp&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:56:10</td>
-            <td>
-                <code>http://111.59.254.165:8084/20250703/photo.scr</code>
-            </td>
-            <td>url</td>
-            <td>Coinminer</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:55:48</td>
-            <td>
-                <code>no1.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:55:48</td>
-            <td>
-                <code>https://no1.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:55:48</td>
-            <td>
-                <code>no1.6666k.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:55:48</td>
-            <td>
-                <code>https://no1.6666k.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:54:26</td>
-            <td>
-                <code>http://106.75.27.209:8086/?h=106.75.27.209&amp;p=8086&amp;t=ws&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:40:19</td>
-            <td>
-                <code>tubewagu.workers.dev</code>
-            </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:39:23</td>
-            <td>
-                <code>toolauncher.com</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:32:21</td>
-            <td>
-                <code>s1xe2votdn.workers.dev</code>
-            </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:30:49</td>
-            <td>
-                <code>https://tir.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:30:48</td>
-            <td>
-                <code>tir.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:30:48</td>
-            <td>
-                <code>https://tir.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:30:48</td>
-            <td>
-                <code>tir.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:29:47</td>
-            <td>
-                <code>tempmailgb.com</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:19:08</td>
-            <td>
-                <code>jeevi.store</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:18:36</td>
-            <td>
-                <code>http://153.117.34.151:59346/Mozi.m</code>
-            </td>
-            <td>url</td>
-            <td>Mozi</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:18:36</td>
-            <td>
-                <code>http://103.66.149.154:57060/Mozi.m</code>
-            </td>
-            <td>url</td>
-            <td>Mozi</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:10:35</td>
-            <td>
-                <code>mhxpjmu3.buhubee.com</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:05:49</td>
-            <td>
-                <code>sep.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:05:49</td>
-            <td>
-                <code>https://sep.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:05:48</td>
-            <td>
-                <code>sep.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:05:48</td>
-            <td>
-                <code>https://sep.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:04:36</td>
-            <td>
-                <code>https://sep.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-12 00:00:02</td>
-            <td>
-                <code>147.185.221.21:60279</code>
+                <code>180.93.125.92:2245</code>
             </td>
             <td>ip:port</td>
-            <td>Nanocore RAT</td>
+            <td>Remcos</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
@@ -2056,12 +1576,12 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:55:07</td>
+            <td>2026-10-12 08:52:59</td>
             <td>
-                <code>276f6a2221548827416b019aa336f44c395c7efdf512ec2286bc089672832e4b</code>
+                <code>0f591ea31c5b2ac4c74005d99c3b511cbfb31ca79342b72204b84a5b4ce84535</code>
             </td>
             <td>sha256_hash</td>
-            <td>Mirai</td>
+            <td>Formbook</td>
             <td>payload</td>
             <td>
                 <span class="confidence">
@@ -2071,369 +1591,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:55:07</td>
+            <td>2026-10-12 08:52:58</td>
             <td>
-                <code>25e110e05a59b8b67b38911318b77a5951dc613eb3105e600e638bc122f4b94a</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:55:06</td>
-            <td>
-                <code>414f133f0619e16230451cdfddd293727492f10925c88250ffb0743bb4441fde</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:55:05</td>
-            <td>
-                <code>61c4d44f555dd4350c7146851198b7340ab7d94a629fdc8fe0f32a04854be497</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:55:03</td>
-            <td>
-                <code>8420dc491648dcb933241b296bd64b74d9690a3ea025bf53fdfacece0cb572b3</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:55:02</td>
-            <td>
-                <code>2f3e18db8199d5dc33d8c15f5f61d00f0b4bcdb555353c5ddb7105027062c472</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:55:00</td>
-            <td>
-                <code>480c1a3f05c2e015a2711deff893b331741f9dd796bb37f720597f28b2ed4115</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:59</td>
-            <td>
-                <code>490fe151e7ffe89956a64b7d2d62791265b67bb1912fb1eccbdd732470a0e9f1</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:58</td>
-            <td>
-                <code>7520dd7a744c552d4ff93217f6ddb5e29609b145a1bd6415fb714643543d8f74</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:58</td>
-            <td>
-                <code>7d5710093e6e207723af7ed09d7b0ea5438de05b3edf703764390b757735bc38</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:57</td>
-            <td>
-                <code>73c2ada67ca2fc3c0694f13c0d648c69cca08c99609f921472dc0b103aa09c2b</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:56</td>
-            <td>
-                <code>4193672b5cb03b3a73829ad77a64d356f8a8ae7590c8e8c5624d357eee281df1</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:54</td>
-            <td>
-                <code>d69fb3e953986da08cd30ed89cf391fe2dbb5d017fac18b99fecc269ad9a1319</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:53</td>
-            <td>
-                <code>8c8890f523dafe01a2d5a65931a691d401da814fcb5d64cddbb2101cbbafce16</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:52</td>
-            <td>
-                <code>ebab808331b4e6a3d887d4c10de97202494a35fd12123bd399eb389f04e50353</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:51</td>
-            <td>
-                <code>5ff0986bb41a3213a79c112c6a7e80310edfb48d3282d6dd2c24cb4964947fdf</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:50</td>
-            <td>
-                <code>539b67507f8e9e8708f98fcb8ac2f4c9ff3fdbfbddb11041a681a2630637e6e9</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:49</td>
-            <td>
-                <code>7681a776f8474fe00a2735d9f66fdc92148043e3dd8256a43b5377b6569f68b2</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:49</td>
-            <td>
-                <code>6b34d756ff2a87f1a29d46176757f6c86f7ed890a0214b627d11e47420508848</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:47</td>
-            <td>
-                <code>0f048eb9fd5664aabeee4e19d5dfc6fd3c97f3c3aea764b87abbee918c16f44f</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:46</td>
-            <td>
-                <code>1572ea5d3fbc32a36967169ba0988f542f1ecd4f3ba539db23ab36ddf97ed458</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:45</td>
-            <td>
-                <code>6dbcd2cf0e8acea8207ae115bc7cf6ae0ac10aead40008fd2113b66555930461</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:44</td>
-            <td>
-                <code>772caf00620c626c1552f18c8301bcf60f39afec5cb87ae6804eb95aa31285c3</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:43</td>
-            <td>
-                <code>8f28370625622b33bd0580b8302c5b3ca51d0363bd40df782cadd2eb3519dc29</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:42</td>
-            <td>
-                <code>cf5cce4cab6f37cfd1749e59fc39300303bee9f3916c7249712d2d26fd68cee0</code>
-            </td>
-            <td>sha256_hash</td>
-            <td>Mirai</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:41</td>
-            <td>
-                <code>8054026c22d6f84e6d6040d704a8f759e8364575df5ad03ef72d3f981262bee3</code>
+                <code>9900143d04ff107fcc5f5b6b09c780cff3bdac77ab966a9e7870ea2300bd4c93</code>
             </td>
             <td>sha256_hash</td>
             <td>AsyncRAT</td>
@@ -2446,178 +1606,28 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:54:40</td>
+            <td>2026-10-12 08:51:06</td>
             <td>
-                <code>4ef6c9f88c03e3ef71a6402d93b41a437cbecd632f06ed78116ac68bfe09abe4</code>
+                <code>policysync.pro</code>
             </td>
-            <td>sha256_hash</td>
-            <td>AsyncRAT</td>
-            <td>payload</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:39</td>
-            <td>
-                <code>http://106.75.27.209:8086/?h=106.75.27.209&amp;p=8086&amp;t=ws&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
+            <td>domain</td>
+            <td>IClickFix</td>
             <td>payload_delivery</td>
             <td>
                 <span class="confidence">
-                    95%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:54:38</td>
+            <td>2026-10-12 08:51:05</td>
             <td>
-                <code>http://106.75.27.209:8086/?h=106.75.27.209&amp;p=8086&amp;t=tcp&amp;a=w64&amp;stage=true</code>
+                <code>https://policysync.pro/1kzpao/m1al0QPUVeJU</code>
             </td>
             <td>url</td>
-            <td>VShell</td>
+            <td>IClickFix</td>
             <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:37</td>
-            <td>
-                <code>http://106.75.27.209:8086/?h=106.75.27.209&amp;p=8086&amp;t=tcp&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:35</td>
-            <td>
-                <code>http://106.15.104.224:1234/?h=106.15.104.224&amp;p=1234&amp;t=tcp&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:54:34</td>
-            <td>
-                <code>http://106.15.104.224:1234/?h=106.15.104.224&amp;p=1234&amp;t=tcp&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:53:47</td>
-            <td>
-                <code>http://101.43.18.99:8100/?h=101.43.18.99&amp;p=8100&amp;t=ws&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:53:46</td>
-            <td>
-                <code>http://101.43.18.99:8100/?h=101.43.18.99&amp;p=8100&amp;t=ws&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:53:44</td>
-            <td>
-                <code>http://101.43.18.99:8100/?h=101.43.18.99&amp;p=8100&amp;t=tcp&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:53:43</td>
-            <td>
-                <code>http://101.43.18.99:8100/?h=101.43.18.99&amp;p=8100&amp;t=tcp&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:52:57</td>
-            <td>
-                <code>https://authoritymarketingagent.com/wp-content/plugins/cgt-blocks/blocks/src/attributestyle.js</code>
-            </td>
-            <td>url</td>
-            <td>Unknown Loader</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:49:15</td>
-            <td>
-                <code>https://bhu.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
             <td>
                 <span class="confidence">
                     100%
@@ -2626,9 +1636,159 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:48:02</td>
+            <td>2026-10-12 08:51:05</td>
             <td>
-                <code>n8rdcldqkv.workers.dev</code>
+                <code>https://policysync.pro/1kzpao/0G7Xcm07FD8I</code>
+            </td>
+            <td>url</td>
+            <td>IClickFix</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:04</td>
+            <td>
+                <code>taxlow.top</code>
+            </td>
+            <td>domain</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:04</td>
+            <td>
+                <code>taxcerf.top</code>
+            </td>
+            <td>domain</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:03</td>
+            <td>
+                <code>taxyy.top</code>
+            </td>
+            <td>domain</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:03</td>
+            <td>
+                <code>taxzz.top</code>
+            </td>
+            <td>domain</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:03</td>
+            <td>
+                <code>taxgg.top</code>
+            </td>
+            <td>domain</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:02</td>
+            <td>
+                <code>202.79.168.132:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>ValleyRAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:02</td>
+            <td>
+                <code>202.79.168.151:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>ValleyRAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:01</td>
+            <td>
+                <code>186.240.199.179:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>ValleyRAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:51:01</td>
+            <td>
+                <code>186.240.199.212:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>ValleyRAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:38:39</td>
+            <td>
+                <code>google-proxy-66-249-88-101.google.com</code>
             </td>
             <td>domain</td>
             <td>php.shin_webshell</td>
@@ -2641,9 +1801,39 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:45:48</td>
+            <td>2026-10-12 08:36:45</td>
             <td>
-                <code>bhu.5tr.org</code>
+                <code>https://xsl.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:30:52</td>
+            <td>
+                <code>https://derltraliqruidity.lat/</code>
+            </td>
+            <td>url</td>
+            <td>Unknown malware</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:25:48</td>
+            <td>
+                <code>xsl.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -2656,9 +1846,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:45:48</td>
+            <td>2026-10-12 08:25:48</td>
             <td>
-                <code>https://bhu.5tr.org/</code>
+                <code>https://xsl.6666k.org/</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -2671,73 +1861,43 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:45:48</td>
+            <td>2026-10-12 08:25:25</td>
             <td>
-                <code>bhu.iakmialor.web.id</code>
+                <code>84.38.133.187:3270</code>
+            </td>
+            <td>ip:port</td>
+            <td>XWorm</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:25:20</td>
+            <td>
+                <code>profacelisting.info</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
+            <td>Remcos</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    100%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:45:48</td>
+            <td>2026-10-12 08:24:30</td>
             <td>
-                <code>https://bhu.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:44:09</td>
-            <td>
-                <code>https://bhu.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:36:45</td>
-            <td>
-                <code>https://ktn.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:30:48</td>
-            <td>
-                <code>ktn.5tr.org</code>
+                <code>hsk19cqn.kaarenorge.com</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
             <td>
                 <span class="confidence">
                     100%
@@ -2746,54 +1906,24 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:30:48</td>
+            <td>2026-10-12 08:18:40</td>
             <td>
-                <code>https://ktn.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:30:48</td>
-            <td>
-                <code>ktn.iakmialor.web.id</code>
+                <code>sobiqisi.workers.dev</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
             <td>
                 <span class="confidence">
-                    100%
+                    50%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:30:48</td>
+            <td>2026-10-12 08:15:26</td>
             <td>
-                <code>https://ktn.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:30:23</td>
-            <td>
-                <code>qh88.navy</code>
+                <code>fifaclubchamps.com</code>
             </td>
             <td>domain</td>
             <td>AsyncRAT</td>
@@ -2806,12 +1936,87 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:25:14</td>
+            <td>2026-10-12 08:10:48</td>
             <td>
-                <code>ironmind.in</code>
+                <code>fqa.6666k.org</code>
             </td>
             <td>domain</td>
-            <td>AsyncRAT</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:10:48</td>
+            <td>
+                <code>https://fqa.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:09:47</td>
+            <td>
+                <code>solidebi.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:09:35</td>
+            <td>
+                <code>1c8cf0eddf6e20069399482ff6038877bf2bfac1bb128a5eba0176be66b08cff</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:09:35</td>
+            <td>
+                <code>startrekfleetcommand.com</code>
+            </td>
+            <td>domain</td>
+            <td>IClickFix</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:05:25</td>
+            <td>
+                <code>102.220.163.78:2404</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
@@ -2821,144 +2026,114 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 23:22:14</td>
+            <td>2026-10-12 08:05:25</td>
             <td>
-                <code>eventation.site</code>
+                <code>216.9.224.78:2404</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:05:24</td>
+            <td>
+                <code>91.92.41.164:2404</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:05:05</td>
+            <td>
+                <code>43.136.92.170:22</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 08:00:21</td>
+            <td>
+                <code>www.jbnowclassprojecttodaybackup1.com</code>
             </td>
             <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    100%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:10:48</td>
+            <td>2026-10-12 08:00:21</td>
             <td>
-                <code>mrw.iakmialor.web.id</code>
+                <code>www.jbnowclassprojecttodaybackup2.com</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
+            <td>Remcos</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    100%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:10:48</td>
+            <td>2026-10-12 08:00:20</td>
             <td>
-                <code>https://mrw.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:06:14</td>
-            <td>
-                <code>https://flo.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:05:48</td>
-            <td>
-                <code>flo.5tr.org</code>
+                <code>www.jbnowclassprojecttoday.com</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
+            <td>Remcos</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    100%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 23:05:48</td>
+            <td>2026-10-12 08:00:20</td>
             <td>
-                <code>https://flo.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 23:00:54</td>
-            <td>
-                <code>https://therstronks-exchrange.lat/rewards</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:59:29</td>
-            <td>
-                <code>https://bni.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:59:03</td>
-            <td>
-                <code>www.pourquoidocteur.fr</code>
+                <code>www.jbnowclassprojecttodaybackup.com</code>
             </td>
             <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    90%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 22:55:48</td>
+            <td>2026-10-12 07:55:48</td>
             <td>
-                <code>bni.iakmialor.web.id</code>
+                <code>mim.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -2971,9 +2146,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:55:48</td>
+            <td>2026-10-12 07:55:48</td>
             <td>
-                <code>https://bni.iakmialor.web.id/</code>
+                <code>https://mim.6666k.org/</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -2986,204 +2161,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:54:17</td>
+            <td>2026-10-12 07:55:10</td>
             <td>
-                <code>http://101.43.115.8:7777/?h=101.43.115.8&amp;p=7777&amp;t=ws&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    85%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:15</td>
-            <td>
-                <code>http://101.43.115.8:7777/?h=101.43.115.8&amp;p=7777&amp;t=ws&amp;a=l64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>Mirai</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:14</td>
-            <td>
-                <code>http://101.43.115.8:7777/?h=101.43.115.8&amp;p=7777&amp;t=ws&amp;a=l32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>Mirai</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:12</td>
-            <td>
-                <code>http://101.43.115.8:7777/?h=101.43.115.8&amp;p=7777&amp;t=tcp&amp;a=l64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>SNOWLIGHT</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:11</td>
-            <td>
-                <code>http://101.43.115.8:7777/?h=101.43.115.8&amp;p=7777&amp;t=tcp&amp;a=l32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>SNOWLIGHT</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:10</td>
-            <td>
-                <code>http://101.132.120.245:8084/?h=101.132.120.245&amp;p=8084&amp;t=ws&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:09</td>
-            <td>
-                <code>http://101.132.120.245:8084/?h=101.132.120.245&amp;p=8084&amp;t=ws&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:07</td>
-            <td>
-                <code>http://101.132.120.245:8084/?h=101.132.120.245&amp;p=8084&amp;t=tcp&amp;a=w64&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:54:06</td>
-            <td>
-                <code>http://101.132.120.245:8084/?h=101.132.120.245&amp;p=8084&amp;t=tcp&amp;a=w32&amp;stage=true</code>
-            </td>
-            <td>url</td>
-            <td>VShell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    95%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:53:44</td>
-            <td>
-                <code>http://116.171.106.3:3435/tomcat8/webapps/bfxt/WEB-INF/classes/com/vkl/ckts/cksy/base/info.zip</code>
-            </td>
-            <td>url</td>
-            <td>Coinminer</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:45:20</td>
-            <td>
-                <code>fwuepkv2.aryl.cloud</code>
-            </td>
-            <td>domain</td>
-            <td>ClearFake</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:43:37</td>
-            <td>
-                <code>leafnblnh3.workers.dev</code>
-            </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:40:48</td>
-            <td>
-                <code>gtt.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:40:48</td>
-            <td>
-                <code>https://gtt.5tr.org/</code>
+                <code>https://mim.6666k.org</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -3196,192 +2176,27 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:39:53</td>
+            <td>2026-10-12 07:53:44</td>
             <td>
-                <code>e17lvbr9l2.workers.dev</code>
+                <code>91.204.209.32:21</code>
             </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:39:50</td>
-            <td>
-                <code>https://gtt.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
+            <td>ip:port</td>
+            <td>Agent Tesla</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
-                    100%
+                    75%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 22:34:55</td>
+            <td>2026-10-12 07:53:13</td>
             <td>
-                <code>https://ned.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:31:12</td>
-            <td>
-                <code>https://aercodlorme.lat/bonus</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:30:48</td>
-            <td>
-                <code>ned.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:30:48</td>
-            <td>
-                <code>https://ned.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:26:54</td>
-            <td>
-                <code>https://neg.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:25:48</td>
-            <td>
-                <code>neg.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:25:48</td>
-            <td>
-                <code>https://neg.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:25:48</td>
-            <td>
-                <code>neg.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:25:48</td>
-            <td>
-                <code>https://neg.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:21:46</td>
-            <td>
-                <code>https://kof.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:12:49</td>
-            <td>
-                <code>4fe508025770c53e0717b524175f079ee23443a4ed909a36be04ee7522e7e055</code>
+                <code>379d762e3da04fd773ffc5d60fcd3128bed3246e85899994a42bdae96d1c3733</code>
             </td>
             <td>sha256_hash</td>
-            <td>Unknown Stealer</td>
+            <td>Bashlite</td>
             <td>payload</td>
             <td>
                 <span class="confidence">
@@ -3391,88 +2206,13 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:10:48</td>
+            <td>2026-10-12 07:53:12</td>
             <td>
-                <code>kof.5tr.org</code>
+                <code>803019eb9738e9a702164b59072de81e29598371e73b80e3c4d6c9adf2041275</code>
             </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:10:48</td>
-            <td>
-                <code>https://kof.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:10:48</td>
-            <td>
-                <code>kof.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:10:48</td>
-            <td>
-                <code>https://kof.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:09:11</td>
-            <td>
-                <code>https://kof.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 22:00:53</td>
-            <td>
-                <code>https://firelightfinance.lat/</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
             <td>
                 <span class="confidence">
                     90%
@@ -3481,13 +2221,13 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:00:53</td>
+            <td>2026-10-12 07:53:11</td>
             <td>
-                <code>https://sonicslabs.lat/</code>
+                <code>ea81e8b74d24f72a4020c4847419fe61c6c13393287356980f70d1ab212116c7</code>
             </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
             <td>
                 <span class="confidence">
                     90%
@@ -3496,13 +2236,13 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:00:53</td>
+            <td>2026-10-12 07:53:10</td>
             <td>
-                <code>https://pendlefinance.lat/</code>
+                <code>d81d9de5d82bca654f4148fa7634707623c39573242650fae2bf32d4b7b4591b</code>
             </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
             <td>
                 <span class="confidence">
                     90%
@@ -3511,13 +2251,13 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 22:00:53</td>
+            <td>2026-10-12 07:53:09</td>
             <td>
-                <code>https://claudeearlyaccess.cfd/</code>
+                <code>5602547f1c70af08f6652a309ffe8ec554aa59f9368110a8ddfbbc60c8d5cb61</code>
             </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
+            <td>sha256_hash</td>
+            <td>BlankGrabber</td>
+            <td>payload</td>
             <td>
                 <span class="confidence">
                     90%
@@ -3526,178 +2266,13 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:56:31</td>
+            <td>2026-10-12 07:53:08</td>
             <td>
-                <code>febaso.workers.dev</code>
+                <code>cc33617b466c6aff6f81a29abbdd44c4534d6c2d6f9d68d41798a700a79130b8</code>
             </td>
-            <td>domain</td>
-            <td>php.shin_webshell</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:53:19</td>
-            <td>
-                <code>https://irc.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:50:48</td>
-            <td>
-                <code>irc.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:50:48</td>
-            <td>
-                <code>https://irc.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:50:48</td>
-            <td>
-                <code>irc.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:50:48</td>
-            <td>
-                <code>https://irc.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:38:02</td>
-            <td>
-                <code>https://leb.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:35:48</td>
-            <td>
-                <code>leb.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:35:48</td>
-            <td>
-                <code>https://leb.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:35:48</td>
-            <td>
-                <code>leb.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:35:48</td>
-            <td>
-                <code>https://leb.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:30:54</td>
-            <td>
-                <code>https://virtualsfinance.lat/</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
             <td>
                 <span class="confidence">
                     90%
@@ -3706,114 +2281,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:30:54</td>
+            <td>2026-10-12 07:53:07</td>
             <td>
-                <code>https://flaresnetworks.lat/</code>
-            </td>
-            <td>url</td>
-            <td>Unknown malware</td>
-            <td>payload_delivery</td>
-            <td>
-                <span class="confidence">
-                    90%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:21:58</td>
-            <td>
-                <code>https://qli.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:20:48</td>
-            <td>
-                <code>qli.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:20:48</td>
-            <td>
-                <code>https://qli.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:20:48</td>
-            <td>
-                <code>qli.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:20:48</td>
-            <td>
-                <code>https://qli.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:16:51</td>
-            <td>
-                <code>https://qli.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 21:12:45</td>
-            <td>
-                <code>bd6fc7755b14d207046e4edf7a455ea8bc40b514bfc9257b925a8b08cb3677d0</code>
+                <code>4a514dae05f134a50d117942e41ee81aa55b7eb2d9b99955f37dc75c5d0dea37</code>
             </td>
             <td>sha256_hash</td>
             <td>Mirai</td>
@@ -3826,9 +2296,24 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:12:43</td>
+            <td>2026-10-12 07:53:06</td>
             <td>
-                <code>e64483a5f953057ef6abfee14c0b08c999a22925f34dea32a21559e8aa7daedb</code>
+                <code>957aa6432f9f433165a78ab74aa061f7a074ccdf08509704daa126591f70b445</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:53:04</td>
+            <td>
+                <code>3d85c12db5d25c9ee68edf5a868d934b6fd55d22ecbbdb08952d0bf31be008ee</code>
             </td>
             <td>sha256_hash</td>
             <td>Mirai</td>
@@ -3841,9 +2326,99 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:02:37</td>
+            <td>2026-10-12 07:53:03</td>
             <td>
-                <code>https://vhu.5tr.org</code>
+                <code>8d7fb95adaac4e03f62c601cc62484c6cd2be2047e10a8d4b756e9c732ea0619</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:53:02</td>
+            <td>
+                <code>c46ba704f0f9551e9ef403318916a5a2d7108b8a87b2525dbfc6fbdd25770ed0</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:53:00</td>
+            <td>
+                <code>ac472a2e063ab67384f81396c46c7dfd2e3c37976edb972600ece01b88e026a3</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:53:00</td>
+            <td>
+                <code>1388bde12ececcf57506a1ab5f8bade4afdaed438dd5a6a18e763236ba623407</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Bashlite</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:52:58</td>
+            <td>
+                <code>3f53a09a26969e8aa6c38b421a1ea41be83763fddc3e968e7c1f0f2b1b084474</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:52:57</td>
+            <td>
+                <code>6f8a2acdd7548976cf8c9b4a8fe8c984c2a43559d92e0dd3258263b6fefbb9d0</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:48:03</td>
+            <td>
+                <code>https://bru.6666k.org</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -3856,27 +2431,477 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:01:56</td>
+            <td>2026-10-12 07:42:27</td>
             <td>
-                <code>drvto.site</code>
+                <code>proxy-us-east008-cip6.ahrefs.net</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:40:48</td>
+            <td>
+                <code>bru.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:40:48</td>
+            <td>
+                <code>https://bru.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:31:57</td>
+            <td>
+                <code>39ae68e02ab6ea9fb39c538eeb6177cdf105557f937f6bcc462e9c0e64319926</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>MacSync</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:31:57</td>
+            <td>
+                <code>https://internetlouisiana.com/curl/42403afd2906a8f3062e3ddb19b28572d88db9ae74b147319383bd280c6bec0a</code>
+            </td>
+            <td>url</td>
+            <td>MacSync</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:31:56</td>
+            <td>
+                <code>internetlouisiana.com</code>
+            </td>
+            <td>domain</td>
+            <td>MacSync</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:28:09</td>
+            <td>
+                <code>944i66mcky.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:25:36</td>
+            <td>
+                <code>161.248.14.20:8790</code>
+            </td>
+            <td>ip:port</td>
+            <td>Unknown malware</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:24:37</td>
+            <td>
+                <code>https://gki.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:20:48</td>
+            <td>
+                <code>gki.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:20:48</td>
+            <td>
+                <code>https://gki.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:18:48</td>
+            <td>
+                <code>63.179.162.160:16747</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:18:48</td>
+            <td>
+                <code>4e3db5b0ffb6b8293a60248a329930edb2d0caa13166320e31df7eb841d950e0</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:12:11</td>
+            <td>
+                <code>owo.efunmilowoonline.top</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown RAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:12:11</td>
+            <td>
+                <code>efunmilowoonline.top</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown RAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:12:08</td>
+            <td>
+                <code>153.52.178.118:8041</code>
+            </td>
+            <td>ip:port</td>
+            <td>Unknown RAT</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:08:44</td>
+            <td>
+                <code>https://bok.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:05:48</td>
+            <td>
+                <code>bok.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:05:48</td>
+            <td>
+                <code>https://bok.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:05:05</td>
+            <td>
+                <code>38.46.15.202:8989</code>
+            </td>
+            <td>ip:port</td>
+            <td>VShell</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:05:04</td>
+            <td>
+                <code>102.117.171.171:7443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Unknown malware</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>139.59.33.238:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>157.230.127.22:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>159.223.68.251:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>164.90.186.13:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>165.22.152.158:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>178.128.223.92:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>188.166.12.8:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>206.189.228.17:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 07:04:23</td>
+            <td>
+                <code>64.227.72.68:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Jackskid</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:58:41</td>
+            <td>
+                <code>teknnovationbyobaid.teknnovation.com</code>
             </td>
             <td>domain</td>
             <td>ClearFake</td>
             <td>payload_delivery</td>
             <td>
                 <span class="confidence">
-                    100%
+                    90%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 21:00:49</td>
+            <td>2026-10-12 06:53:31</td>
             <td>
-                <code>vhu.iakmialor.web.id</code>
+                <code>iy5iikmqxercpdjk5swzib2m2f3sn6o3o7khivgul4f47nweflusqiqd.onion</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
+            <td>Unknown malware</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
@@ -3886,9 +2911,114 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:00:49</td>
+            <td>2026-10-12 06:53:31</td>
             <td>
-                <code>https://vhu.iakmialor.web.id/</code>
+                <code>4vr5sxshsx6se4qixnrvbqyikqtknfjhe4ybitp2zhjjzazm4ohawbid.onion</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown malware</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:53:03</td>
+            <td>
+                <code>0ca37f50624fdc8297c15118de4380a8a5da687471f52712b5538f67f9301c6e</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:53:02</td>
+            <td>
+                <code>934e70eff0041473614da9a3967ad29a16a0f5138218c24983418c8e856b4e94</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:53:01</td>
+            <td>
+                <code>aa320ddffb5e9bf0bf6e79e4f97f4cd9740b53e977b913ee4db57d4a7ce78707</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:52:59</td>
+            <td>
+                <code>36bc4711b281a6a06a8122da38696cc4370c1a7d9825097135f9bc16c676c2e3</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:52:58</td>
+            <td>
+                <code>7f4745b9eca5fcafcb5e6d291a7d9eb4730bc0f36f88c20e1906de6ef0f829b3</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:52:57</td>
+            <td>
+                <code>14dee44a96cd02d3c74c39a195943fc46e839057224800a1937f73ccca303889</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    95%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:51:42</td>
+            <td>
+                <code>https://kik.6666k.org</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -3901,9 +3031,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:00:48</td>
+            <td>2026-10-12 06:50:48</td>
             <td>
-                <code>vhu.5tr.org</code>
+                <code>kik.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -3916,9 +3046,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 21:00:48</td>
+            <td>2026-10-12 06:50:48</td>
             <td>
-                <code>https://vhu.5tr.org/</code>
+                <code>https://kik.6666k.org/</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -3931,58 +3061,43 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:58:18</td>
+            <td>2026-10-12 06:49:31</td>
             <td>
-                <code>https://jig.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:52:22</td>
-            <td>
-                <code>bimorize.workers.dev</code>
+                <code>data.vaceditions.com</code>
             </td>
             <td>domain</td>
-            <td>php.shin_webshell</td>
+            <td>Unknown RAT</td>
             <td>payload_delivery</td>
             <td>
                 <span class="confidence">
-                    50%
+                    100%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 20:48:43</td>
+            <td>2026-10-12 06:49:31</td>
             <td>
-                <code>fezypy.workers.dev</code>
+                <code>my-adobe-plugins-update.top</code>
             </td>
             <td>domain</td>
-            <td>php.shin_webshell</td>
+            <td>Unknown RAT</td>
             <td>payload_delivery</td>
             <td>
                 <span class="confidence">
-                    50%
+                    100%
                 </span>
             </td>
         </tr>
         
         <tr>
-            <td>2026-10-11 20:45:48</td>
+            <td>2026-10-12 06:49:31</td>
             <td>
-                <code>jig.5tr.org</code>
+                <code>acrob.my-adobe-plugins-update.top</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
+            <td>Unknown RAT</td>
+            <td>payload_delivery</td>
             <td>
                 <span class="confidence">
                     100%
@@ -3991,12 +3106,27 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:45:48</td>
+            <td>2026-10-12 06:49:28</td>
             <td>
-                <code>https://jig.5tr.org/</code>
+                <code>213.176.73.162:80</code>
+            </td>
+            <td>ip:port</td>
+            <td>SmartLoader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:49:25</td>
+            <td>
+                <code>http://213.176.73.162/api/</code>
             </td>
             <td>url</td>
-            <td>Vidar</td>
+            <td>SmartLoader</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
@@ -4006,27 +3136,12 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:40:48</td>
+            <td>2026-10-12 06:49:25</td>
             <td>
-                <code>jig.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:40:48</td>
-            <td>
-                <code>https://jig.iakmialor.web.id/</code>
+                <code>http://185.10.68.110/api/</code>
             </td>
             <td>url</td>
-            <td>Vidar</td>
+            <td>SmartLoader</td>
             <td>botnet_cc</td>
             <td>
                 <span class="confidence">
@@ -4036,39 +3151,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:40:26</td>
+            <td>2026-10-12 06:30:53</td>
             <td>
-                <code>https://jig.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:35:21</td>
-            <td>
-                <code>https://kat.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:30:54</td>
-            <td>
-                <code>https://deepseek-earlyaccess.com/</code>
+                <code>https://googlegemini-earlyacccess.com/</code>
             </td>
             <td>url</td>
             <td>Unknown malware</td>
@@ -4081,9 +3166,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:24:18</td>
+            <td>2026-10-12 06:26:22</td>
             <td>
-                <code>https://kat.5tr.org</code>
+                <code>https://moh.6666k.org</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -4096,24 +3181,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:20:49</td>
+            <td>2026-10-12 06:25:48</td>
             <td>
-                <code>https://kat.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:20:48</td>
-            <td>
-                <code>kat.5tr.org</code>
+                <code>moh.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -4126,9 +3196,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:20:48</td>
+            <td>2026-10-12 06:25:48</td>
             <td>
-                <code>https://kat.5tr.org/</code>
+                <code>https://moh.6666k.org/</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -4141,24 +3211,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:20:48</td>
+            <td>2026-10-12 06:24:15</td>
             <td>
-                <code>kat.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:12:12</td>
-            <td>
-                <code>google-proxy-66-249-88-228.google.com</code>
+                <code>sikyxuxo.workers.dev</code>
             </td>
             <td>domain</td>
             <td>php.shin_webshell</td>
@@ -4171,99 +3226,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 20:05:35</td>
+            <td>2026-10-12 06:23:23</td>
             <td>
-                <code>https://hik.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:00:50</td>
-            <td>
-                <code>https://hik.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:00:50</td>
-            <td>
-                <code>hik.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:00:50</td>
-            <td>
-                <code>https://hik.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 20:00:49</td>
-            <td>
-                <code>hik.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:59:29</td>
-            <td>
-                <code>https://hik.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:56:19</td>
-            <td>
-                <code>http://unseanb.surf:9059</code>
+                <code>http://spiohop.shop:9932/imports</code>
             </td>
             <td>url</td>
             <td>Remus</td>
@@ -4276,9 +3241,1059 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:55:04</td>
+            <td>2026-10-12 06:23:23</td>
             <td>
-                <code>eyxiukwn.aryllabs.com</code>
+                <code>http://booohop.shop:5627/addresses</code>
+            </td>
+            <td>url</td>
+            <td>Remus</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:19:12</td>
+            <td>
+                <code>http://125.41.226.121:41026/Mozi.a</code>
+            </td>
+            <td>url</td>
+            <td>Mozi</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:19:11</td>
+            <td>
+                <code>http://137.59.218.27:47247/Mozi.m</code>
+            </td>
+            <td>url</td>
+            <td>Mozi</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:19:11</td>
+            <td>
+                <code>http://190.196.253.29:11485/Mozi.a</code>
+            </td>
+            <td>url</td>
+            <td>Mozi</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:19:10</td>
+            <td>
+                <code>http://190.196.253.118:11011/Mozi.m</code>
+            </td>
+            <td>url</td>
+            <td>Mozi</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:17:20</td>
+            <td>
+                <code>varynuky.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:42</td>
+            <td>
+                <code>https://rrj.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:36</td>
+            <td>
+                <code>172.111.138.100:4427</code>
+            </td>
+            <td>ip:port</td>
+            <td>Unknown malware</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:35</td>
+            <td>
+                <code>https://unby6r.oss-cn-beijing.aliyuncs.com/tad</code>
+            </td>
+            <td>url</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:35</td>
+            <td>
+                <code>https://yu8y1w.oss-cn-beijing.aliyuncs.com/tad</code>
+            </td>
+            <td>url</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:34</td>
+            <td>
+                <code>https://26usdm.oss-cn-beijing.aliyuncs.com/tad</code>
+            </td>
+            <td>url</td>
+            <td>ValleyRAT</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:34</td>
+            <td>
+                <code>fb9464c262d2e61dfb1be8a7f5733fd9fcae77531d748ec376400c4da2966274</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:34</td>
+            <td>
+                <code>f55a01024912947929929639773eb9baad087a90aa346ff1cd8e9ba25474a3ee</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:33</td>
+            <td>
+                <code>45.135.194.96:1999</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    80%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:33</td>
+            <td>
+                <code>gahour5lamo2.duckdns.org</code>
+            </td>
+            <td>domain</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:32</td>
+            <td>
+                <code>gahour5lamo1.duckdns.org</code>
+            </td>
+            <td>domain</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:31</td>
+            <td>
+                <code>gahour5lamo3.duckdns.org</code>
+            </td>
+            <td>domain</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:31</td>
+            <td>
+                <code>gahour5lamo4.duckdns.org</code>
+            </td>
+            <td>domain</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:30</td>
+            <td>
+                <code>5d34c1a8c754737c6e31b672060d94cdbae3910a207f56e1a4eba5701c18829e</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:30</td>
+            <td>
+                <code>fe29jf323.kesug.com</code>
+            </td>
+            <td>domain</td>
+            <td>Konni</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:29</td>
+            <td>
+                <code>dd849943e7cdbc1de907a0874b880eef99b67f2f9595f160db5b2524d28ab908</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:29</td>
+            <td>
+                <code>daa27ba0977e6d202161bbbc6fb9fe22ca1353c5d8893bcf16892fe2b82e8405</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:28</td>
+            <td>
+                <code>http://inini.kesug.com/uploads/payload.txt</code>
+            </td>
+            <td>url</td>
+            <td>Kimsuky</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:27</td>
+            <td>
+                <code>inini.kesug.com</code>
+            </td>
+            <td>domain</td>
+            <td>Kimsuky</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:27</td>
+            <td>
+                <code>https://wall.casajuanchos.com/pidor.ps1</code>
+            </td>
+            <td>url</td>
+            <td>Unknown malware</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:27</td>
+            <td>
+                <code>aa4f09a1be061cde697c990df49bb09b78639acc1f0decc7b7ef5c30f4df694f</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Unknown malware</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:26</td>
+            <td>
+                <code>wall.casajuanchos.com</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown malware</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:25</td>
+            <td>
+                <code>1e29472ea92b8218232d63d0c72859e94e531d9b6d804555c97b26b076af4d23</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Unknown malware</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:24</td>
+            <td>
+                <code>bee.beachcafemb.com</code>
+            </td>
+            <td>domain</td>
+            <td>TELEPUZ</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:24</td>
+            <td>
+                <code>https://t.me/molerkorstarstot</code>
+            </td>
+            <td>url</td>
+            <td>TELEPUZ</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:23</td>
+            <td>
+                <code>https://steamcommunity.com/profiles/76561199770856090</code>
+            </td>
+            <td>url</td>
+            <td>TELEPUZ</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:22</td>
+            <td>
+                <code>1d90627d5213dc9fef971a7c945e1aa4c9c84a5bf14a69cf0f14775908843b10</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:22</td>
+            <td>
+                <code>100.57.32.60:8443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:21</td>
+            <td>
+                <code>3.98.91.44:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:20</td>
+            <td>
+                <code>45.207.157.28:9999</code>
+            </td>
+            <td>ip:port</td>
+            <td>Unknown malware</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:20</td>
+            <td>
+                <code>44c2961c7039fd84938fc9d23f4f22ec1fbe930dc2158ea512f74356b3d4ffb2</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:19</td>
+            <td>
+                <code>payload1717.pro</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:19</td>
+            <td>
+                <code>gran1xea.xyz</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:18</td>
+            <td>
+                <code>samehoo229.fun</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:18</td>
+            <td>
+                <code>pobruog.wiki</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:18</td>
+            <td>
+                <code>sayosay.cc</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:16</td>
+            <td>
+                <code>https://security-bloom-pw34.pages.dev/</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Loader</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:15</td>
+            <td>
+                <code>crying881.beer</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown Loader</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:15</td>
+            <td>
+                <code>https://s1w21.comen.store/update.sh</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Loader</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:14</td>
+            <td>
+                <code>https://secure-node-protection04.s3.us-west-004.backblazeb2.com/beacon1.html</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Loader</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:13</td>
+            <td>
+                <code>https://ardinova.digital/mass-dig</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Loader</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:13</td>
+            <td>
+                <code>https://918441.studiowaterarts.com/</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Loader</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:13</td>
+            <td>
+                <code>37347580662ae59f7d5b4517475c557261e6be1ee4d6f6babe854b0d91ffe83c</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Unknown Loader</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:12</td>
+            <td>
+                <code>lebang.si</code>
+            </td>
+            <td>domain</td>
+            <td>PeaceNotWar</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:12</td>
+            <td>
+                <code>https://lebang.si/vsix/lebang-1.0.24.vsix</code>
+            </td>
+            <td>url</td>
+            <td>PeaceNotWar</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:10</td>
+            <td>
+                <code>ff69000a1f4a1cc1da66399803f45bef7bbe3f69c002f9ac990fa8506fcf392a</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>PeaceNotWar</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:10</td>
+            <td>
+                <code>182.190.217.14:23</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:09</td>
+            <td>
+                <code>165.245.160.178:5900</code>
+            </td>
+            <td>ip:port</td>
+            <td>DarkVNC</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:09</td>
+            <td>
+                <code>165.245.171.220:5900</code>
+            </td>
+            <td>ip:port</td>
+            <td>DarkVNC</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:09</td>
+            <td>
+                <code>31.59.220.26:5900</code>
+            </td>
+            <td>ip:port</td>
+            <td>DarkVNC</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:07</td>
+            <td>
+                <code>113.254.122.139:23</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:07</td>
+            <td>
+                <code>71.15.96.217:23</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:06</td>
+            <td>
+                <code>211.43.97.233:23</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:06</td>
+            <td>
+                <code>34.22.226.31:23</code>
+            </td>
+            <td>ip:port</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:05</td>
+            <td>
+                <code>threejrev.com</code>
+            </td>
+            <td>domain</td>
+            <td>Unknown malware</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:04</td>
+            <td>
+                <code>sxmaytinhdientu.devs.surf</code>
+            </td>
+            <td>domain</td>
+            <td>Mirai</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:04</td>
+            <td>
+                <code>7bbf23b90e5e056e9f8c3cd41d5dad712dad036d1fb5ba30f50758817ab04dba</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>AMOS</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:11:03</td>
+            <td>
+                <code>https://new-mexico.club</code>
+            </td>
+            <td>url</td>
+            <td>Unknown Stealer</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:10:48</td>
+            <td>
+                <code>rrj.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:10:48</td>
+            <td>
+                <code>https://rrj.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:05:25</td>
+            <td>
+                <code>185.137.93.64:27000</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:05:24</td>
+            <td>
+                <code>185.137.93.64:2700</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    75%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 06:05:04</td>
+            <td>
+                <code>43.136.92.170:8080</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:55:48</td>
+            <td>
+                <code>dri.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:55:48</td>
+            <td>
+                <code>https://dri.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:54:38</td>
+            <td>
+                <code>i67d9ppi.b00kself.com</code>
             </td>
             <td>domain</td>
             <td>ClearFake</td>
@@ -4291,39 +4306,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:49:15</td>
+            <td>2026-10-12 05:40:48</td>
             <td>
-                <code>https://vjh.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:45:48</td>
-            <td>
-                <code>82.202.157.112:48392</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:45:48</td>
-            <td>
-                <code>vjh.5tr.org</code>
+                <code>vok.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -4336,9 +4321,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:45:48</td>
+            <td>2026-10-12 05:40:48</td>
             <td>
-                <code>https://vjh.5tr.org/</code>
+                <code>https://vok.6666k.org/</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -4351,868 +4336,28 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:45:48</td>
+            <td>2026-10-12 05:39:07</td>
             <td>
-                <code>vjh.iakmialor.web.id</code>
+                <code>https://vok.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:33:05</td>
+            <td>
+                <code>lorine.workers.dev</code>
             </td>
             <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:45:48</td>
-            <td>
-                <code>https://vjh.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:45:47</td>
-            <td>
-                <code>82.202.157.112:31337</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:45:24</td>
-            <td>
-                <code>45.195.248.140:443</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:44:53</td>
-            <td>
-                <code>216.9.225.201:1250</code>
-            </td>
-            <td>ip:port</td>
-            <td>AsyncRAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:44:53</td>
-            <td>
-                <code>216.9.227.252:1250</code>
-            </td>
-            <td>ip:port</td>
-            <td>AsyncRAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:44:23</td>
-            <td>
-                <code>198.100.154.163:8443</code>
-            </td>
-            <td>ip:port</td>
-            <td>BianLian</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:44:10</td>
-            <td>
-                <code>190.102.40.154:443</code>
-            </td>
-            <td>ip:port</td>
-            <td>PureRAT</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:44:08</td>
-            <td>
-                <code>https://vjh.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.26:25225</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.3:25232</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.53:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.54:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.55:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.75:25218</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:45</td>
-            <td>
-                <code>156.252.210.76:25218</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.203.75:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.210.11:25219</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.210.2:25232</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.210.221:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.210.222:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:44</td>
-            <td>
-                <code>156.252.210.223:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:42</td>
-            <td>
-                <code>154.90.78.76:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:42</td>
-            <td>
-                <code>154.90.78.9:25225</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:42</td>
-            <td>
-                <code>154.90.78.90:25219</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.109:25219</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.114:25225</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.117:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.124:25221</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.20:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.21:25219</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.229:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.230:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:41</td>
-            <td>
-                <code>154.90.78.4:25228</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.10:25225</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.12:25227</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.16:25217</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.19:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.4:25226</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.77.75:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.78.103:25227</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:40</td>
-            <td>
-                <code>154.90.78.106:25225</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.82.149.30:25219</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.86.11.118:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.86.11.18:25217</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.86.11.21:25201</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.86.11.77:25203</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:39</td>
-            <td>
-                <code>154.86.11.88:25226</code>
-            </td>
-            <td>ip:port</td>
-            <td>DanaBot</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:16</td>
-            <td>
-                <code>109.111.45.66:4321</code>
-            </td>
-            <td>ip:port</td>
-            <td>AdaptixC2</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:43:11</td>
-            <td>
-                <code>104.243.242.50:3002</code>
-            </td>
-            <td>ip:port</td>
-            <td>DCRat</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    75%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:39:01</td>
-            <td>
-                <code>https://bkm.5tr.org</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:33:53</td>
-            <td>
-                <code>https://bkm.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:30:48</td>
-            <td>
-                <code>bkm.5tr.org</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:30:48</td>
-            <td>
-                <code>https://bkm.5tr.org/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:30:48</td>
-            <td>
-                <code>bkm.iakmialor.web.id</code>
-            </td>
-            <td>domain</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:30:48</td>
-            <td>
-                <code>https://bkm.iakmialor.web.id/</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:21:23</td>
-            <td>
-                <code>https://gwi.iakmialor.web.id</code>
-            </td>
-            <td>url</td>
-            <td>Vidar</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    100%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:11:44</td>
-            <td>
-                <code>89.126.250.93:31337</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
             <td>
                 <span class="confidence">
                     50%
@@ -5221,39 +4366,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:11:31</td>
+            <td>2026-10-12 05:28:54</td>
             <td>
-                <code>51.124.188.53:31337</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:11:19</td>
-            <td>
-                <code>45.8.46.209:31337</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:11:09</td>
-            <td>
-                <code>https://gwi.5tr.org</code>
+                <code>https://koi.6666k.org</code>
             </td>
             <td>url</td>
             <td>Vidar</td>
@@ -5266,24 +4381,9 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:11:06</td>
+            <td>2026-10-12 05:20:48</td>
             <td>
-                <code>38.60.157.33:31337</code>
-            </td>
-            <td>ip:port</td>
-            <td>Sliver</td>
-            <td>botnet_cc</td>
-            <td>
-                <span class="confidence">
-                    50%
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>2026-10-11 19:10:48</td>
-            <td>
-                <code>gwi.5tr.org</code>
+                <code>koi.6666k.org</code>
             </td>
             <td>domain</td>
             <td>Vidar</td>
@@ -5296,11 +4396,911 @@
         </tr>
         
         <tr>
-            <td>2026-10-11 19:10:48</td>
+            <td>2026-10-12 05:20:48</td>
             <td>
-                <code>https://gwi.5tr.org/</code>
+                <code>https://koi.6666k.org/</code>
             </td>
             <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:13:31</td>
+            <td>
+                <code>https://myt.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:10:03</td>
+            <td>
+                <code>217.60.195.219:2404</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:05:48</td>
+            <td>
+                <code>myt.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:05:48</td>
+            <td>
+                <code>https://myt.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:05:03</td>
+            <td>
+                <code>43.136.92.170:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:05:03</td>
+            <td>
+                <code>43.136.92.170:80</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 05:02:09</td>
+            <td>
+                <code>178.16.53.56:9034</code>
+            </td>
+            <td>ip:port</td>
+            <td>Aisuru</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:59:25</td>
+            <td>
+                <code>172.111.161.134:4489</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:12</td>
+            <td>
+                <code>281cdbb7d1f655808e2748311bc002ec86238d91013a7c2dd088faea6e6fd548</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:11</td>
+            <td>
+                <code>e88f382fa651eb327f2c541c87ae555683b5aa9a037645259eab2a68162ea894</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:10</td>
+            <td>
+                <code>565422e182c8dd4d799257eb053248b8ff9ed052a7729b56ec04722f95057328</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:09</td>
+            <td>
+                <code>edb22b57fddffcbae1d8a6348efe724e3361bc97575f7231599bd51ad3430807</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:08</td>
+            <td>
+                <code>6655cf6c13fa34ba79940a5a703a6d9fed092465937986e77668d5a4f06445d5</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:07</td>
+            <td>
+                <code>759c151534be334b305c23ddc593606bba1ec172448b8734944844a81c379345</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:05</td>
+            <td>
+                <code>28bbd5353459848870e10e2696a85ff9fa67c33e5e98e6097de88965993b1ac0</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:04</td>
+            <td>
+                <code>eae1f8de417d97e96c8bdf8c171b4275e042e7e0482b38619516e93e2f3f201d</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:03</td>
+            <td>
+                <code>1caff97f7211323952474b5f0d57fc3ee4c59fba495de77417691bd9debc58c8</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:02</td>
+            <td>
+                <code>32aa5562e3f6339e95d61eb558cee7c71aa82128fb79070b747e28ae070f650f</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:01</td>
+            <td>
+                <code>a4718ffe2211c6a2b84865141f1efae11bc61f8008e8ff89a519396de82ab23e</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:53:00</td>
+            <td>
+                <code>b930b4978b1a7408240781988f7c634f8c36d9e5dfb4f58967abe065d6553c55</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:52:58</td>
+            <td>
+                <code>15c1db6a5c5a9c3b63cd8c31f9bd0a1d303afe250c49f7cce99f89f9f44d532d</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:52:57</td>
+            <td>
+                <code>7e1c3ff4e96b5ef277b44156a09b0464f9a858ba911e7de921666623499ebce2</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:52:56</td>
+            <td>
+                <code>abd1250d89965d93ba39311108bc984d2a197c672c39a23308857dadc58109f4</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:50:48</td>
+            <td>
+                <code>lrg.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:50:48</td>
+            <td>
+                <code>https://lrg.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:50:30</td>
+            <td>
+                <code>7xum1r5l.lunza.store</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:48:54</td>
+            <td>
+                <code>google-proxy-66-249-88-230.google.com</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:36:47</td>
+            <td>
+                <code>https://bfb.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:35:48</td>
+            <td>
+                <code>bfb.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:35:48</td>
+            <td>
+                <code>https://bfb.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:23:47</td>
+            <td>
+                <code>tlakj14995.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:20:48</td>
+            <td>
+                <code>lry.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:20:48</td>
+            <td>
+                <code>https://lry.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:16:28</td>
+            <td>
+                <code>damacyra.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:05:05</td>
+            <td>
+                <code>118.126.95.117:443</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:05:05</td>
+            <td>
+                <code>118.126.95.117:80</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:05:05</td>
+            <td>
+                <code>118.126.95.117:8080</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:05:04</td>
+            <td>
+                <code>118.126.95.117:8081</code>
+            </td>
+            <td>ip:port</td>
+            <td>Cobalt Strike</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:03:01</td>
+            <td>
+                <code>https://jte.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:00:49</td>
+            <td>
+                <code>https://jte.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 04:00:48</td>
+            <td>
+                <code>jte.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:52:56</td>
+            <td>
+                <code>708f122d6e0cfa1195c457cd0ba00b23b56f22014eda4f013deeed1bd0367c8c</code>
+            </td>
+            <td>sha256_hash</td>
+            <td>Mirai</td>
+            <td>payload</td>
+            <td>
+                <span class="confidence">
+                    90%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:42:46</td>
+            <td>
+                <code>https://zxi.6666k.org</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:40:48</td>
+            <td>
+                <code>zxi.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:40:48</td>
+            <td>
+                <code>https://zxi.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:32:45</td>
+            <td>
+                <code>pepezunu.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:19:39</td>
+            <td>
+                <code>rtp-k86sportop.site</code>
+            </td>
+            <td>domain</td>
+            <td>ClearFake</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:10:48</td>
+            <td>
+                <code>vo8.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:10:48</td>
+            <td>
+                <code>https://vo8.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 03:10:31</td>
+            <td>
+                <code>91.92.41.19:2404</code>
+            </td>
+            <td>ip:port</td>
+            <td>Remcos</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:59:45</td>
+            <td>
+                <code>178.16.53.76:8080</code>
+            </td>
+            <td>ip:port</td>
+            <td>Aisuru</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:50:48</td>
+            <td>
+                <code>mii.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:50:48</td>
+            <td>
+                <code>https://mii.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:35:48</td>
+            <td>
+                <code>vve.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:35:48</td>
+            <td>
+                <code>https://vve.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:31:40</td>
+            <td>
+                <code>522jsf6oyx.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:25:48</td>
+            <td>
+                <code>bro.6666k.org</code>
+            </td>
+            <td>domain</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:25:48</td>
+            <td>
+                <code>https://bro.6666k.org/</code>
+            </td>
+            <td>url</td>
+            <td>Vidar</td>
+            <td>botnet_cc</td>
+            <td>
+                <span class="confidence">
+                    100%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:22:45</td>
+            <td>
+                <code>4aq2w5u1fe.workers.dev</code>
+            </td>
+            <td>domain</td>
+            <td>php.shin_webshell</td>
+            <td>payload_delivery</td>
+            <td>
+                <span class="confidence">
+                    50%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2026-10-12 02:10:48</td>
+            <td>
+                <code>npq.6666k.org</code>
+            </td>
+            <td>domain</td>
             <td>Vidar</td>
             <td>botnet_cc</td>
             <td>
